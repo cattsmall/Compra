@@ -1,7 +1,7 @@
 {
   "name": "Compra",
   "description": "A simple web app",
-  "launch_path": "/index.php",
+  "launch_path": "app-v1.0/index.php",
   "version": "1.0",
   "developer": {
       "name": "Catt Small",
