@@ -1419,16 +1419,39 @@ ul.task-list li.task {
 ul.task-list li.task:not(:last-child) {
   border-bottom: 1px solid #cccccc;
 }
-ul.task-list li.task section.task-info header.task-text {
+ul.task-list li.task article.task-info header.task-text {
   padding: .5em 1em;
 }
-ul.task-list li.task section.task-info h3 {
+ul.task-list li.task article.task-info h3 {
   font-weight: lighter;
   margin: 0;
 }
-ul.task-list li.task section.task-info p {
+ul.task-list li.task article.task-info p {
   font-weight: 100;
   margin: 0 0 1em;
+}
+ul.task-list li.task article.task-info section.task-price-range {
+  border-top: 1px solid #ececec;
+  padding: .5em 1em;
+}
+ul.task-list li.task article.task-info section.task-price-range:after {
+  visibility: hidden;
+  display: block;
+  font-size: 0;
+  content: " ";
+  clear: both;
+  height: 0;
+}
+ul.task-list li.task article.task-info section.task-price-range p {
+  float: left;
+  font-size: 1.5em;
+  color: #999999;
+}
+ul.task-list li.task article.task-info section.task-price-range p:first-of-type {
+  margin-right: .5em;
+}
+ul.task-list li.task article.task-info section.task-price-range p strong {
+  font-weight: normal;
 }
 form.task-price-range {
   background: #cccccc;

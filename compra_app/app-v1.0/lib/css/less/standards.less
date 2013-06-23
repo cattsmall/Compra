@@ -41,7 +41,7 @@ nav.navigation {border-bottom:1px solid @gray; .clearfix;
 
 form.add-task {border-bottom:1px solid @gray; position:relative; padding:.5em 0;
 	input {
-		&[type="text"], &[type="number"] {.full}
+		&[type="text"], &[type="number"] {.full;}
 	}
 	.add-task-button {.absolute; right:0; top:.75em; background:@green;}
 }
@@ -50,10 +50,18 @@ ul.task-list {.unstyled;
 	li.task {
 		& {background:@white;}
 		&:not(:last-child) {border-bottom:1px solid @gray;}
-		section.task-info {
+		article.task-info {
 			header.task-text {padding:.5em 1em;}
 			h3 {font-weight:lighter; margin:0;}
 			p {font-weight:100; margin:0 0 1em;}
+			section {
+				&.task-price-range {border-top:1px solid @lightGray; padding:.5em 1em; .clearfix;
+					p {float:left; font-size:1.5em; color:@midGray;
+						&:first-of-type {margin-right:.5em;}
+						strong {font-weight:normal;}
+					}
+				}
+			}
 		}
 	}
 }
