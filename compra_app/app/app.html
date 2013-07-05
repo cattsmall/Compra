@@ -4,6 +4,7 @@
 
 <body>
   {{> header}}
+  {{> listitems}}
 </body>
 
 <template name="header">
@@ -17,15 +18,15 @@
 		{{#if settings}}
 
 		{{else}}
-			<form class="add-task">
-				<input type="text" placeholder="Enter an item you'd like to buy">
+			<form class="add-task" method="post">
+				<input type="text" class="task-name" id="add-task-name" placeholder="Enter an item you'd like to buy">
 				<button class="add-task-button submit"><i class="icon-plus"></i></button>
 			</form>
 	  {{/if}}
 	</header>
 </template>
 
-<template name="list">
+<template name="listitems">
 	<ul class="task-list">
 		{{#each listitems}}
 		        {{> listitem}}
@@ -53,11 +54,11 @@
 				<div class="three-fourths">
 					<fieldset class="task-price minimum">
 						<label>Min:</label>
-						<input type="number" placeholder="$0">
+						<input type="number" placeholder="$0" value="{{taskpricemin}}">
 					</fieldset>
 					<fieldset class="task-price maximum">
 						<label>Max:</label>
-						<input type="number" placeholder="$0">
+						<input type="number" placeholder="$0" value="{{taskpricemax}}">
 					</fieldset>
 				</div>
 				<button class="submit save-task"><i class="icon-ok"></i></button>
