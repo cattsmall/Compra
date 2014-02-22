@@ -6,8 +6,47 @@
 		<meta name="description">
 		<link rel="stylesheet" href="css/bootstrap.css">
 	  <script src="lib/scripts/angular.min.js"></script>
+	  <script src="lib/scripts/controllers.js"></script>
 	</head>
 	<body>
-		<p>Nothing here {{'yet' + '!'}}</p>
+		<header>
+			<h1>Compra</h1>
+			<h2>A shopping list that helps you budget</h2>
+		</header>
+		<section class="active-area">
+			<ul class="editable-list">
+				<li class="add-new-item">
+					<form>
+						<label>What do you want to buy today?</label>
+						<input type="text" placeholder="Enter the item's name">
+						
+						<fieldset>
+							<legend>How much do you want to spend?</legend>
+							<div class="half">
+								<label>Minimum:</label>
+								<select>
+									<option>$</option>
+									<option>£</option>
+									<option>€</option>
+									<option>¥</option>
+								</select>
+								<input type="text" placeholder="$">
+							</div>
+							<div class="half">
+								<label>Maximum:</label>
+								<input type="text" placeholder="Enter the item's name">
+							</div>
+						</fieldset>
+						<input type="submit" class="btn">
+					</form>
+				</li>
+				<li ng-repeat="item in wantedItems">
+				</li>
+			</ul>
+			<aside class="items-total-cost">
+				<h4>Total amount you'll spend:</h4>
+				<input type="text" disabled placeholder="The maximum you'll spend today will appear here">
+			</aside>
+		</section>
 	</body>
 </html>
