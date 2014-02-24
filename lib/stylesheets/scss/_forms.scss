@@ -1,0 +1,38 @@
+form {
+	> label {
+		font-size:2em;
+		line-height:1em;
+	}
+	
+	label {
+		color:$grayD2;
+		display:block;
+		margin:0 0 .5em;
+	}
+	
+	fieldset {
+		margin:0;
+		padding:0;
+		border:0;
+	}
+}
+
+input {
+	&:not([type="submit"]) {
+		border:1px solid $gray;
+		display:block;
+		width:100%;
+		font-size:1em;
+		padding:.5em;
+		margin:0;
+	}
+}
+
+select {
+	-webkit-appearance:none;
+	padding:.5em;
+	font-size:1em;
+	border:1px solid $gray;
+	background: url('../img/dropdown-icon.png') no-repeat scroll 85% 50% #ffffff;
+	box-shadow:inset 0 -2px 3px fade-out($black,.9);
+}

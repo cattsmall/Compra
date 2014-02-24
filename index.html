@@ -17,27 +17,30 @@
 			<ul class="editable-list">
 				<li class="add-new-item">
 					<form>
-						<label>What do you want to buy today?</label>
+						<label>What do you want to buy?</label>
 						<input type="text" placeholder="Enter the item's name">
 						
 						<fieldset>
 							<legend>How much do you want to spend?</legend>
-							<div class="half">
-								<label>Minimum:</label>
+							<div class="half minimum-price">
+								<label>Min:</label>
 								<select>
 									<option>$</option>
 									<option>£</option>
 									<option>€</option>
 									<option>¥</option>
 								</select>
-								<input type="text" placeholder="Price">
+								<input type="text" placeholder="Minimum price ({{newitem.currencySign}})">
 							</div>
 							<div class="half">
-								<label>Maximum:</label>
-								<input type="text" placeholder="Price">
+								<label>Max:</label>
+								<input type="text" placeholder="Maximum price ({{newitem.currencySign}})">
 							</div>
 						</fieldset>
-						<input type="submit" class="btn">
+						<button class="btn">
+							<i class="ss-icon ss-standard">&#x002B;</i>
+							Add to list
+						</button>
 					</form>
 				</li>
 				<li ng-repeat="item in wantedItems">

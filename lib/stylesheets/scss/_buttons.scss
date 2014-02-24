@@ -1,0 +1,16 @@
+.btn {
+	display:block;
+	width:100%;
+	font-size:1.5em;
+	padding:.5em;
+	-webkit-appearance:none;
+	@include border-radius;
+	border:1px solid fade-out($black,.75);
+	color:$white;
+	background:$greenD1;
+	
+	.ss-icon {
+		font-size: .75em;
+		opacity:.5;
+	}
+}
