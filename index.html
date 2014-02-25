@@ -1,5 +1,5 @@
 <!doctype html>
-<html lang="en" ng-app>
+<html lang="en" ng-app="listApp">
 	<head>
 		<meta charset="utf-8">
 		<title>Compra - a shopping list app</title>
@@ -7,8 +7,9 @@
 		<link rel="stylesheet" href="lib/stylesheets/app.css">
 	  <script src="lib/scripts/angular.min.js"></script>
 	  <script src="lib/scripts/controllers.js"></script>
+	  <script src="lib/scripts/services.js"></script>
 	</head>
-	<body>
+	<body ng-controller="listCtrl">
 		<header>
 			<h1>Compra</h1>
 			<h2>A shopping list that helps you budget</h2>
@@ -16,7 +17,11 @@
 		<section class="container">
 			<ul class="editable-list">
 				<li class="add-new-item">
-					<form>
+					<button class="btn btn-plain" ng-show="!addItem" ng-click="addItem = true">
+						<i class="ss-icon ss-standard">&#x002B;</i>
+						Add a new item
+					</button>
+					<form ng-show="addItem">
 						<label>What do you want to buy?</label>
 						<input type="text" placeholder="Enter the item's name">
 						
@@ -24,11 +29,11 @@
 							<legend>How much do you want to spend?</legend>
 							<div class="half minimum-price">
 								<label>Min:</label>
-								<select>
-									<option>$</option>
-									<option>£</option>
-									<option>€</option>
-									<option>¥</option>
+								<select ng-model="newitem.currency">
+									<option value="USD">$</option>
+									<option value="GBP">£</option>
+									<option value="EUR">€</option>
+									<option value="JPY">¥</option>
 								</select>
 								<input type="text" placeholder="Minimum price ({{newitem.currencySign}})">
 							</div>
@@ -37,7 +42,7 @@
 								<input type="text" placeholder="Maximum price ({{newitem.currencySign}})">
 							</div>
 						</fieldset>
-						<button class="btn">
+						<button class="btn" ng-click="addItem = false">
 							<i class="ss-icon ss-standard">&#x002B;</i>
 							Add to list
 						</button>
@@ -45,13 +50,12 @@
 				</li>
 				<li ng-repeat="item in wantedItems">
 					<h3>{{item.name}}</h3>
-					<h4>Price:</h4>
-					<p>{{item.minPrice}} - {{item.maxPrice}}</p>
+					<p>Will spend {{item.currencySign}}{{item.minPrice}} - {{item.currencySign}}{{item.maxPrice}}</p>
 				</li>
 			</ul>
 			<aside class="items-total-cost">
 				<h4>Total amount you'll spend:</h4>
-				<input type="text" disabled placeholder="The maximum you'll spend today will appear here">
+				<input type="text" disabled placeholder="{{newitem.currencySign}}0">
 			</aside>
 		</section>
 	</body>
