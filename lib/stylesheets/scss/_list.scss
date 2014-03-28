@@ -1,27 +1,27 @@
 .editable-list {
-	margin:1em 0 1em;
+	margin:0;
 	padding:0;
 	list-style:none;
 	@extend .clearfix;
 	
 	li {
-		padding:1em;
+		padding:1em 1em 1em 3em;
 		background: fade-out($white, .25);
 		border:1px solid fade-out($white,.5);
 		border-bottom-color: fade-out($black,.85);
     @extend .clearfix;
     
     h3 {
-      float:left;
       margin:0 .5em 0 0;
       font-size:1.75em;
+      float:left;
     }
   
     .price-range {
-      float:right;
       margin:0;
       font-size:1.5em;
       color:$grayD1;
+      float:right;
     }
 	}
 	
@@ -38,8 +38,8 @@
 		form {
       position:relative;
       background:$greenL3;
-			border:1px solid fade-out($black,.85);
 			padding:2em;
+  		border-bottom:1px solid fade-out($black,.85);
 			
 			> label {
 				font-size:2em;
@@ -86,14 +86,20 @@
 }
 
 .items-total-cost {
+  padding:1em;
+  text-align:center;
+  
 	h4 {
 		margin:0 0 .5em;
+    font-weight:normal;
+    color:$gray;
 	}
 	
 	input {
 		background:none;
 		border:0;
 		padding:0;
-		font-size:2em;
+		font-size:3em;
+    text-align:center;
 	}
 }

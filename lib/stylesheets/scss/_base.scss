@@ -3,13 +3,19 @@ html, body {
 	padding:0;
 }
 
+html {
+	background: $greenL2;
+  
+}
+
 body {
-	padding:20px;
 	font-size:100%;
 	line-height:1em;
 	font-family: $bodyFont;
-	background: $greenL2;
 	text-shadow: 0 -2px 0 fade-out($white, .25);
+  max-width:800px;
+  margin:0 auto;
+  background:$white;
 }
 
 h1 {
@@ -22,13 +28,10 @@ h1 {
 
 header {
 	text-align:center;
-	padding:1em;
+  padding:2em 1em 1em;
 }
 
 .container {
-	max-width:700px;
-	margin:0 auto;
-	padding:1em;
 }
 
 .half {

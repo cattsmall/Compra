@@ -18,13 +18,17 @@ html, body {
   margin: 0;
   padding: 0; }
 
+html {
+  background: #a6ffde; }
+
 body {
-  padding: 20px;
   font-size: 100%;
   line-height: 1em;
   font-family: "Titillium Web", sans-serif;
-  background: #a6ffde;
-  text-shadow: 0 -2px 0 rgba(255, 255, 255, 0.75); }
+  text-shadow: 0 -2px 0 rgba(255, 255, 255, 0.75);
+  max-width: 800px;
+  margin: 0 auto;
+  background: white; }
 
 h1 {
   margin: 0 0 .25em;
@@ -35,12 +39,7 @@ h1 {
 
 header {
   text-align: center;
-  padding: 1em; }
-
-.container {
-  max-width: 700px;
-  margin: 0 auto;
-  padding: 1em; }
+  padding: 2em 1em 1em; }
 
 .half {
   width: 49%;
@@ -68,6 +67,8 @@ input:not([type="submit"]) {
   font-size: 1em;
   padding: .5em;
   margin: 0; }
+  input:not([type="submit"]):focus {
+    outline: none; }
 
 select {
   -webkit-appearance: none;
@@ -134,23 +135,23 @@ select {
       text-shadow: inset 0 0 10px rgba(0, 0, 0, 0.25); }
 
 .editable-list {
-  margin: 1em 0 1em;
+  margin: 0;
   padding: 0;
   list-style: none; }
   .editable-list li {
-    padding: 1em;
+    padding: 1em 1em 1em 3em;
     background: rgba(255, 255, 255, 0.75);
     border: 1px solid rgba(255, 255, 255, 0.5);
     border-bottom-color: rgba(0, 0, 0, 0.15); }
     .editable-list li h3 {
-      float: left;
       margin: 0 .5em 0 0;
-      font-size: 1.75em; }
+      font-size: 1.75em;
+      float: left; }
     .editable-list li .price-range {
-      float: right;
       margin: 0;
       font-size: 1.5em;
-      color: #999999; }
+      color: #999999;
+      float: right; }
   .editable-list .add-new-item {
     padding: 0;
     border: 0; }
@@ -160,9 +161,9 @@ select {
       right: .5em; }
     .editable-list .add-new-item form {
       position: relative;
-      background: #f3fffa;
-      border: 1px solid rgba(0, 0, 0, 0.15);
-      padding: 2em; }
+      background: #d9fff1;
+      padding: 2em;
+      border-bottom: 1px solid rgba(0, 0, 0, 0.15); }
       .editable-list .add-new-item form > label {
         font-size: 2em;
         line-height: 1em;
@@ -191,10 +192,16 @@ select {
         .editable-list .add-new-item form fieldset + .btn {
           margin-top: 1em; }
 
-.items-total-cost h4 {
-  margin: 0 0 .5em; }
-.items-total-cost input {
-  background: none;
-  border: 0;
-  padding: 0;
-  font-size: 2em; }
+.items-total-cost {
+  padding: 1em;
+  text-align: center; }
+  .items-total-cost h4 {
+    margin: 0 0 .5em;
+    font-weight: normal;
+    color: #cccccc; }
+  .items-total-cost input {
+    background: none;
+    border: 0;
+    padding: 0;
+    font-size: 3em;
+    text-align: center; }

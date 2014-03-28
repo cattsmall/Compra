@@ -17,7 +17,7 @@
 		<section class="container">
 			<ul class="editable-list">
 				<li class="add-new-item">
-					<button class="btn btn-primary" ng-show="!addItem" ng-click="addItem = true">
+					<button class="btn btn-primary" ng-show="!addItem" ng-click="addItem = true; setCurrency(newItem);">
 						<i class="ss-icon ss-standard">&#x002B;</i>
 						Add a new item
 					</button>

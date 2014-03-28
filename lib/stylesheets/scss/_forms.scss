@@ -25,6 +25,10 @@ input {
 		font-size:1em;
 		padding:.5em;
 		margin:0;
+    
+    &:focus {
+      outline:none;
+    }
 	}
 }
 
