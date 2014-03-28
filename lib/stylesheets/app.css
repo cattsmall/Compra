@@ -1,12 +1,12 @@
 @import url(http://fonts.googleapis.com/css?family=Titillium+Web:400,600,700,700italic,600italic,400italic,300,300italic);
 @import url(http://fonts.googleapis.com/css?family=Lobster+Two:400,700,700italic,400italic);
 @import url(ss-standard.css);
-.clearfix {
+.clearfix, .editable-list, .editable-list li {
   zoom: 1; }
-  .clearfix:before, .clearfix:after {
+  .clearfix:before, .editable-list:before, .editable-list li:before, .clearfix:after, .editable-list:after, .editable-list li:after {
     content: "";
     display: table; }
-  .clearfix:after {
+  .clearfix:after, .editable-list:after, .editable-list li:after {
     clear: both; }
 
 * {
@@ -23,7 +23,7 @@ body {
   font-size: 100%;
   line-height: 1em;
   font-family: "Titillium Web", sans-serif;
-  background: #80ffce;
+  background: #a6ffde;
   text-shadow: 0 -2px 0 rgba(255, 255, 255, 0.75); }
 
 h1 {
@@ -89,7 +89,7 @@ select {
   border-radius: 4px;
   border: 1px solid rgba(0, 0, 0, 0.25);
   color: white;
-  background: #0abf7a;
+  background: #00c077;
   box-shadow: inset 0 0 2px rgba(255, 255, 255, 0.5);
   text-shadow: 0 -3px 0 rgba(0, 0, 0, 0.15);
   outline: none;
@@ -103,33 +103,65 @@ select {
     .btn:hover .ss-icon {
       opacity: .75; }
   .btn:active {
-    background: #068051;
+    background: #007348;
     text-shadow: 0 -1px 0 rgba(0, 0, 0, 0.15);
     box-shadow: inset 0 0 10px rgba(0, 0, 0, 0.25);
     transition: all .1s; }
-  .btn.btn-plain {
-    padding: 1em;
+  .btn.btn-primary {
     border-radius: 0; }
+  .btn.btn-danger {
+    border-radius: 0;
+    background: red; }
+    .btn.btn-danger:hover {
+      background: #ff6666; }
+    .btn.btn-danger:active {
+      background: red; }
+  .btn.btn-plain {
+    width: auto;
+    padding: 0;
+    background: none;
+    border: 0;
+    text-shadow: none;
+    color: rgba(0, 0, 0, 0.25); }
+    .btn.btn-plain .ss-icon {
+      opacity: 1; }
     .btn.btn-plain:hover {
-      background: #a6ffdd; }
+      color: red;
+      background: none; }
     .btn.btn-plain:active {
-      background: #0dffa4; }
+      background: none;
+      box-shadow: none;
+      text-shadow: inset 0 0 10px rgba(0, 0, 0, 0.25); }
 
 .editable-list {
-  margin: 0 0 1em;
+  margin: 1em 0 1em;
   padding: 0;
   list-style: none; }
   .editable-list li {
-    padding: 2em;
+    padding: 1em;
     background: rgba(255, 255, 255, 0.75);
     border: 1px solid rgba(255, 255, 255, 0.5);
     border-bottom-color: rgba(0, 0, 0, 0.15); }
+    .editable-list li h3 {
+      float: left;
+      margin: 0 .5em 0 0;
+      font-size: 1.75em; }
+    .editable-list li .price-range {
+      float: right;
+      margin: 0;
+      font-size: 1.5em;
+      color: #999999; }
   .editable-list .add-new-item {
     padding: 0;
     border: 0; }
+    .editable-list .add-new-item .btn-plain {
+      position: absolute;
+      top: .5em;
+      right: .5em; }
     .editable-list .add-new-item form {
-      border: 1px solid rgba(255, 255, 255, 0.5);
-      border-bottom-color: rgba(0, 0, 0, 0.15);
+      position: relative;
+      background: #f3fffa;
+      border: 1px solid rgba(0, 0, 0, 0.15);
       padding: 2em; }
       .editable-list .add-new-item form > label {
         font-size: 2em;

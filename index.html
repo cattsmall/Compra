@@ -17,45 +17,49 @@
 		<section class="container">
 			<ul class="editable-list">
 				<li class="add-new-item">
-					<button class="btn btn-plain" ng-show="!addItem" ng-click="addItem = true">
+					<button class="btn btn-primary" ng-show="!addItem" ng-click="addItem = true">
 						<i class="ss-icon ss-standard">&#x002B;</i>
 						Add a new item
 					</button>
-					<form ng-show="addItem">
+					<button class="btn btn-danger" ng-show="addItem" ng-click="addItem = false">
+						<i class="ss-icon ss-standard">&#x2421;</i>
+						Cancel
+					</button>
+					<form ng-if="addItem">
 						<label>What do you want to buy?</label>
-						<input type="text" placeholder="Enter the item's name">
+						<input type="text" placeholder="Enter the item's name" ng-model="newItem.name">
 						
 						<fieldset>
 							<legend>How much do you want to spend?</legend>
 							<div class="half minimum-price">
 								<label>Min:</label>
-								<select ng-model="newitem.currency">
+								<select ng-model="newItem.currency" ng-change="setCurrency(newItem);">
 									<option value="USD">$</option>
 									<option value="GBP">£</option>
 									<option value="EUR">€</option>
 									<option value="JPY">¥</option>
 								</select>
-								<input type="text" placeholder="Minimum price ({{newitem.currencySign}})">
+								<input type="text" placeholder="Minimum price ({{newItem.currencySign}})" ng-model="newItem.minPrice">
 							</div>
 							<div class="half">
 								<label>Max:</label>
-								<input type="text" placeholder="Maximum price ({{newitem.currencySign}})">
+								<input type="text" placeholder="Maximum price ({{newItem.currencySign}})" ng-model="newItem.maxPrice">
 							</div>
 						</fieldset>
-						<button class="btn" ng-click="addItem = false">
-							<i class="ss-icon ss-standard">&#x002B;</i>
-							Add to list
+						<button class="btn" ng-click="addToList(newItem);">
+							<i class="ss-icon ss-standard">&#x2713;</i>
+							Save to list
 						</button>
 					</form>
 				</li>
 				<li ng-repeat="item in wantedItems">
 					<h3>{{item.name}}</h3>
-					<p>Will spend {{item.currencySign}}{{item.minPrice}} - {{item.currencySign}}{{item.maxPrice}}</p>
+					<p class="price-range">{{item.currencySign}}{{item.minPrice}} - {{item.currencySign}}{{item.maxPrice}}</p>
 				</li>
 			</ul>
 			<aside class="items-total-cost">
 				<h4>Total amount you'll spend:</h4>
-				<input type="text" disabled placeholder="{{newitem.currencySign}}0">
+				<input type="text" disabled value="{{defaultCurrencySign}}{{totalMinPrice}} - {{defaultCurrencySign}}{{totalMaxPrice}}">
 			</aside>
 		</section>
 	</body>

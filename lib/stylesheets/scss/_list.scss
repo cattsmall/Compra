@@ -1,23 +1,44 @@
 .editable-list {
-	margin:0 0 1em;
+	margin:1em 0 1em;
 	padding:0;
 	list-style:none;
-	@extend clearfix;
+	@extend .clearfix;
 	
 	li {
-		padding:2em;
+		padding:1em;
 		background: fade-out($white, .25);
 		border:1px solid fade-out($white,.5);
 		border-bottom-color: fade-out($black,.85);
+    @extend .clearfix;
+    
+    h3 {
+      float:left;
+      margin:0 .5em 0 0;
+      font-size:1.75em;
+    }
+  
+    .price-range {
+      float:right;
+      margin:0;
+      font-size:1.5em;
+      color:$grayD1;
+    }
 	}
 	
 	.add-new-item {
 		padding:0;
 		border:0;
+    
+    .btn-plain {
+      position:absolute;
+      top:.5em;
+      right:.5em;
+    }
 		
 		form {
-			border:1px solid fade-out($white,.5);
-			border-bottom-color: fade-out($black,.85);
+      position:relative;
+      background:$greenL3;
+			border:1px solid fade-out($black,.85);
 			padding:2em;
 			
 			> label {

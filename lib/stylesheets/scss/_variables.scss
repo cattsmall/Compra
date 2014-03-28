@@ -10,15 +10,17 @@ $grayL2: #ebebeb;
 $grayL3: #efefef;
 
 $green: #0DFFA4;
-$greenD1: #0abf7a;
-$greenD2: #068051;
-$greenD3: #034029;
-$greenL1: #80ffce;
-$greenL2: #a6ffdd;
-$greenL3: #ccffeb;
+$greenD1: darken($green,15);
+$greenD2: darken($green,30);
+$greenD3: darken($green,45);
+$greenL1: lighten($green,15);
+$greenL2: lighten($green,30);
+$greenL3: lighten($green,45);
+$greenL4: lighten($green,60);
 
 $blue: #1C0CE8;
 
 $red: #FF0000;
+$redL1: lighten($red,20);
 
 $orange: #E8AB0C;
