@@ -686,6 +686,8 @@ input:not([type="submit"]) {
     outline: none; }
   input:not([type="submit"]).ng-invalid.ng-dirty {
     border-color: red; }
+    input:not([type="submit"]).ng-invalid.ng-dirty.ng-valid-ng-min:not(.ng-invalid-ng-max), input:not([type="submit"]).ng-invalid.ng-dirty.ng-valid-ng-max:not(.ng-invalid-ng-min) {
+      border-color: #cccccc; }
 
 select {
   -webkit-appearance: none;

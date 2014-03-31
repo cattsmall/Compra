@@ -32,6 +32,10 @@ input {
     
     &.ng-invalid.ng-dirty {
       border-color:$red;
+      
+      &.ng-valid-ng-min:not(.ng-invalid-ng-max), &.ng-valid-ng-max:not(.ng-invalid-ng-min) {
+        border-color:$gray;
+      }
     }
 	}
 }

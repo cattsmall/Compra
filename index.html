@@ -8,6 +8,7 @@
 		<link rel="stylesheet" href="lib/stylesheets/app.css">
 	  <script src="lib/scripts/angular.min.js"></script>
 	  <script src="lib/scripts/controllers.js"></script>
+	  <script src="lib/scripts/directives.js"></script>
 	  <script src="lib/scripts/services.js"></script>
 	</head>
 	<body ng-controller="listCtrl">
@@ -42,11 +43,11 @@
   								<option value="EUR">€</option>
   								<option value="JPY">¥</option>
   							</select>
-  							<input type="number" required min="0" placeholder="Minimum price ({{newItem.currencySign}})" ng-model="newItem.minPrice">
+  							<input type="number" required min="0" ng-max="{{newItem.maxPrice}}" placeholder="Minimum price ({{newItem.currencySign}})" ng-model="newItem.minPrice">
   						</div>
   						<div class="half">
   							<label>Max:</label>
-  							<input type="number" required min="{{newItem.minPrice}}" placeholder="Maximum price ({{newItem.currencySign}})" ng-model="newItem.maxPrice">
+  							<input type="number" required ng-min="{{newItem.minPrice || 0}}" placeholder="Maximum price ({{newItem.currencySign}})" ng-model="newItem.maxPrice">
   						</div>
   					</fieldset>
   					<button class="btn" ng-disabled="addForm.$invalid" ng-click="addToList(newItem); addItem = false; addForm.$setPristine();">
