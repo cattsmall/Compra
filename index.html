@@ -10,11 +10,13 @@
 	  <script src="lib/scripts/services.js"></script>
 	</head>
 	<body ng-controller="listCtrl">
-		<header>
-			<h1>Compra</h1>
-			<h2>A shopping list that helps you budget</h2>
+		<header ng-class="{hidden: !showIntroScreen, visible: showIntroScreen}" class="app-intro">
+      <div class="container">
+  			<h1>Compra</h1>
+  			<h2>A shopping list that helps you budget</h2>
+      </div>
 		</header>
-		<section class="container">
+		<section class="container list-area" ng-if="!showIntroScreen">
 			<ul class="editable-list">
 				<li class="add-new-item">
 					<button class="btn btn-primary" ng-show="!addItem" ng-click="addItem = true; setCurrency(newItem);">

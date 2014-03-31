@@ -5,7 +5,6 @@ html, body {
 
 html {
 	background: $greenL2;
-  
 }
 
 body {
@@ -13,9 +12,8 @@ body {
 	line-height:1em;
 	font-family: $bodyFont;
 	text-shadow: 0 -2px 0 fade-out($white, .25);
-  max-width:800px;
+  max-width:750px;
   margin:0 auto;
-  background:$white;
 }
 
 h1 {
@@ -28,7 +26,6 @@ h1 {
 
 header {
 	text-align:center;
-  padding:2em 1em 1em;
 }
 
 .container {
@@ -42,4 +39,14 @@ header {
 	+ .half {
 		margin:0;
 	}
+}
+
+.hidden {
+  opacity:0;
+  @include transition;
+}
+
+.visible {
+  opacity:1;
+  @include transition;
 }

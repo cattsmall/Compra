@@ -26,9 +26,8 @@ body {
   line-height: 1em;
   font-family: "Titillium Web", sans-serif;
   text-shadow: 0 -2px 0 rgba(255, 255, 255, 0.75);
-  max-width: 800px;
-  margin: 0 auto;
-  background: white; }
+  max-width: 750px;
+  margin: 0 auto; }
 
 h1 {
   margin: 0 0 .25em;
@@ -38,8 +37,7 @@ h1 {
   font-style: italic; }
 
 header {
-  text-align: center;
-  padding: 2em 1em 1em; }
+  text-align: center; }
 
 .half {
   width: 49%;
@@ -47,6 +45,22 @@ header {
   float: left; }
   .half + .half {
     margin: 0; }
+
+.hidden {
+  opacity: 0;
+  -webkit-transition: all 0.2s ease-in-out;
+  -moz-transition: all 0.2s ease-in-out;
+  -ms-transition: all 0.2s ease-in-out;
+  -o-transition: all 0.2s ease-in-out;
+  transition: all 0.2s ease-in-out; }
+
+.visible {
+  opacity: 1;
+  -webkit-transition: all 0.2s ease-in-out;
+  -moz-transition: all 0.2s ease-in-out;
+  -ms-transition: all 0.2s ease-in-out;
+  -o-transition: all 0.2s ease-in-out;
+  transition: all 0.2s ease-in-out; }
 
 form > label {
   font-size: 2em;
@@ -133,6 +147,28 @@ select {
       background: none;
       box-shadow: none;
       text-shadow: inset 0 0 10px rgba(0, 0, 0, 0.25); }
+
+.app-intro {
+  position: absolute;
+  top: 0;
+  right: 0;
+  bottom: 0;
+  left: 0;
+  background: #a6ffde;
+  z-index: 10000;
+  display: table;
+  width: 100%;
+  height: 100%; }
+  .app-intro .container {
+    background: #d9fff1;
+    box-shadow: inset 0 0 40px #a6ffde;
+    border-radius: 20px;
+    vertical-align: middle;
+    text-align: center;
+    display: table-cell; }
+
+.list-area {
+  background: white; }
 
 .editable-list {
   margin: 0;
