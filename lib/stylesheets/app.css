@@ -933,6 +933,19 @@ select {
           font-size: 1.5em;
           line-height: 1.25em;
           width: 80%;
-          margin: 0 auto 1.5em; }
+          margin: 0 auto 0; }
+          .editable-list-area .editable-list li.empty-list p:last-child {
+            margin-bottom: 1.5em; }
       .editable-list-area .editable-list li:last-child {
         border-bottom: 0; }
+
+@media screen and (max-width: 550px) {
+  .app-intro h1 {
+    font-size: 5em; }
+  .app-intro h2 {
+    font-size: 1em; }
+
+  .add-new-item form fieldset .minimum-price select {
+    width: 25%; }
+    .add-new-item form fieldset .minimum-price select + input {
+      width: 70%; } }

@@ -137,7 +137,11 @@
           font-size:1.5em;
           line-height: 1.25em;
           width: 80%;
-          margin: 0 auto 1.5em;
+          margin: 0 auto 0;
+          
+          &:last-child {
+            margin-bottom: 1.5em;
+          }
         }
       }
       

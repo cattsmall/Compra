@@ -1,0 +1,27 @@
+@media screen and (max-width: 550px) {
+  .app-intro {
+    h1 {
+      font-size:5em;
+    }
+    
+    h2 {
+      font-size: 1em;
+    }
+  }
+  
+  .add-new-item {
+    form {
+      fieldset {
+        .minimum-price {
+          select {
+            width:25%;
+            
+            + input {
+              width:70%;
+            }
+          }
+        }
+      }
+    }
+  }
+}

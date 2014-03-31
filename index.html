@@ -41,7 +41,7 @@
   								<option value="EUR">€</option>
   								<option value="JPY">¥</option>
   							</select>
-  							<input type="number" required placeholder="Minimum price ({{newItem.currencySign}})" ng-model="newItem.minPrice">
+  							<input type="number" required min="0" placeholder="Minimum price ({{newItem.currencySign}})" ng-model="newItem.minPrice">
   						</div>
   						<div class="half">
   							<label>Max:</label>
@@ -75,7 +75,8 @@
   				</li>
           <li class="empty-list" ng-if="boughtItems == 0 && wantedItems.length == 0">
      				<i class="ss-icon ss-standard">&#x1F4A7;</i>
-            <p>Nothing is on your list yet. Click the button above to add your first item!</p>
+            <p>Nothing is on your list yet.</p>
+            <p>Click the button above to add your first item!</p>
           </li>
   			</ul>
       </section>
