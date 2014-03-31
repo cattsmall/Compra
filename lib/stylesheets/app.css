@@ -1,18 +1,605 @@
+@charset "UTF-8";
 @import url(http://fonts.googleapis.com/css?family=Titillium+Web:400,600,700,700italic,600italic,400italic,300,300italic);
 @import url(http://fonts.googleapis.com/css?family=Lobster+Two:400,700,700italic,400italic);
-@import url(ss-standard.css);
-.clearfix, .editable-list, .editable-list li {
+/*
+* Symbolset
+* www.symbolset.com
+* Copyright © 2012 Oak Studios LLC
+* 
+* Upload this file to your web server
+* and place this within your <head> tags.
+* <link href="webfonts/ss-standard.css" rel="stylesheet" />
+*/
+@font-face {
+  font-family: "SSStandard";
+  src: url("../fonts/ss-standard/ss-standard.eot");
+  src: url("../fonts/ss-standard/ss-standard.eot?#iefix") format("embedded-opentype"), url("../fonts/ss-standard/ss-standard.woff") format("woff"), url("../fonts/ss-standard/ss-standard.ttf") format("truetype"), url("../fonts/ss-standard/ss-standard.svg#SSStandard") format("svg");
+  font-weight: normal;
+  font-style: normal; }
+
+.ss-icon, .ss-icon.ss-standard, .editable-list-area .editable-list li .checkbox-toggle:after,
+[class^="ss-"]:before, [class*=" ss-"]:before,
+[class^="ss-"].ss-standard:before, [class*=" ss-"].ss-standard:before,
+[class^="ss-"].right:after, [class*=" ss-"].right:after,
+[class^="ss-"].ss-standard.right:after, [class*=" ss-"].ss-standard.right:after {
+  font-family: "SSStandard";
+  font-style: normal;
+  font-weight: normal;
+  text-decoration: none;
+  text-rendering: optimizeLegibility;
+  white-space: nowrap;
+  -webkit-font-feature-settings: "liga";
+  -moz-font-feature-settings: "liga=1";
+  -moz-font-feature-settings: "liga";
+  -ms-font-feature-settings: "liga" 1;
+  -o-font-feature-settings: "liga";
+  font-feature-settings: "liga";
+  -webkit-font-smoothing: antialiased; }
+
+[class^="ss-"].right:before, [class*=" ss-"].ss-standard.right:before {
+  display: none;
+  content: ''; }
+
+.ss-cursor:before, .ss-cursor.right:after {
+  content: ''; }
+
+.ss-crosshair:before, .ss-crosshair.right:after {
+  content: '⌖'; }
+
+.ss-search:before, .ss-search.right:after {
+  content: '🔎'; }
+
+.ss-zoomin:before, .ss-zoomin.right:after {
+  content: ''; }
+
+.ss-zoomout:before, .ss-zoomout.right:after {
+  content: ''; }
+
+.ss-view:before, .ss-view.right:after {
+  content: '👀'; }
+
+.ss-attach:before, .ss-attach.right:after {
+  content: '📎'; }
+
+.ss-link:before, .ss-link.right:after {
+  content: '🔗'; }
+
+.ss-move:before, .ss-move.right:after {
+  content: ''; }
+
+.ss-write:before, .ss-write.right:after {
+  content: '✎'; }
+
+.ss-writingdisabled:before, .ss-writingdisabled.right:after {
+  content: ''; }
+
+.ss-erase:before, .ss-erase.right:after {
+  content: '✐'; }
+
+.ss-compose:before, .ss-compose.right:after {
+  content: '📝'; }
+
+.ss-lock:before, .ss-lock.right:after {
+  content: '🔒'; }
+
+.ss-unlock:before, .ss-unlock.right:after {
+  content: '🔓'; }
+
+.ss-key:before, .ss-key.right:after {
+  content: '🔑'; }
+
+.ss-backspace:before, .ss-backspace.right:after {
+  content: '⌫'; }
+
+.ss-ban:before, .ss-ban.right:after {
+  content: '🚫'; }
+
+.ss-trash:before, .ss-trash.right:after {
+  content: ''; }
+
+.ss-target:before, .ss-target.right:after {
+  content: '◎'; }
+
+.ss-tag:before, .ss-tag.right:after {
+  content: ''; }
+
+.ss-bookmark:before, .ss-bookmark.right:after {
+  content: '🔖'; }
+
+.ss-flag:before, .ss-flag.right:after {
+  content: '⚑'; }
+
+.ss-like:before, .ss-like.right:after {
+  content: '👍'; }
+
+.ss-dislike:before, .ss-dislike.right:after {
+  content: '👎'; }
+
+.ss-heart:before, .ss-heart.right:after {
+  content: '♥'; }
+
+.ss-halfheart:before, .ss-halfheart.right:after {
+  content: ''; }
+
+.ss-star:before, .ss-star.right:after {
+  content: '⋆'; }
+
+.ss-halfstar:before, .ss-halfstar.right:after {
+  content: ''; }
+
+.ss-sample:before, .ss-sample.right:after {
+  content: ''; }
+
+.ss-crop:before, .ss-crop.right:after {
+  content: ''; }
+
+.ss-layers:before, .ss-layers.right:after {
+  content: ''; }
+
+.ss-phone:before, .ss-phone.right:after {
+  content: '📞'; }
+
+.ss-phonedisabled:before, .ss-phonedisabled.right:after {
+  content: ''; }
+
+.ss-rss:before, .ss-rss.right:after {
+  content: ''; }
+
+.ss-facetime:before, .ss-facetime.right:after {
+  content: ''; }
+
+.ss-reply:before, .ss-reply.right:after {
+  content: '↩'; }
+
+.ss-send:before, .ss-send.right:after {
+  content: ''; }
+
+.ss-mail:before, .ss-mail.right:after {
+  content: '✉'; }
+
+.ss-inbox:before, .ss-inbox.right:after {
+  content: '📥'; }
+
+.ss-chat:before, .ss-chat.right:after {
+  content: '💬'; }
+
+.ss-user:before, .ss-user.right:after {
+  content: '👤'; }
+
+.ss-femaleuser:before, .ss-femaleuser.right:after {
+  content: '👧'; }
+
+.ss-users:before, .ss-users.right:after {
+  content: '👥'; }
+
+.ss-cart:before, .ss-cart.right:after {
+  content: ''; }
+
+.ss-creditcard:before, .ss-creditcard.right:after {
+  content: '💳'; }
+
+.ss-dollarsign:before, .ss-dollarsign.right:after {
+  content: '💲'; }
+
+.ss-barchart:before, .ss-barchart.right:after {
+  content: '📊'; }
+
+.ss-piechart:before, .ss-piechart.right:after {
+  content: ''; }
+
+.ss-box:before, .ss-box.right:after {
+  content: '📦'; }
+
+.ss-home:before, .ss-home.right:after {
+  content: '⌂'; }
+
+.ss-globe:before, .ss-globe.right:after {
+  content: '🌎'; }
+
+.ss-navigate:before, .ss-navigate.right:after {
+  content: ''; }
+
+.ss-compass:before, .ss-compass.right:after {
+  content: ''; }
+
+.ss-signpost:before, .ss-signpost.right:after {
+  content: ''; }
+
+.ss-map:before, .ss-map.right:after {
+  content: ''; }
+
+.ss-location:before, .ss-location.right:after {
+  content: ''; }
+
+.ss-pin:before, .ss-pin.right:after {
+  content: '📍'; }
+
+.ss-database:before, .ss-database.right:after {
+  content: ''; }
+
+.ss-hdd:before, .ss-hdd.right:after {
+  content: ''; }
+
+.ss-music:before, .ss-music.right:after {
+  content: '♫'; }
+
+.ss-mic:before, .ss-mic.right:after {
+  content: '🎤'; }
+
+.ss-volume:before, .ss-volume.right:after {
+  content: '🔈'; }
+
+.ss-lowvolume:before, .ss-lowvolume.right:after {
+  content: '🔉'; }
+
+.ss-highvolume:before, .ss-highvolume.right:after {
+  content: '🔊'; }
+
+.ss-airplay:before, .ss-airplay.right:after {
+  content: ''; }
+
+.ss-camera:before, .ss-camera.right:after {
+  content: '📷'; }
+
+.ss-picture:before, .ss-picture.right:after {
+  content: '🌄'; }
+
+.ss-video:before, .ss-video.right:after {
+  content: '📹'; }
+
+.ss-play:before, .ss-play.right:after {
+  content: '▶'; }
+
+.ss-pause:before, .ss-pause.right:after {
+  content: ''; }
+
+.ss-stop:before, .ss-stop.right:after {
+  content: '■'; }
+
+.ss-record:before, .ss-record.right:after {
+  content: '●'; }
+
+.ss-rewind:before, .ss-rewind.right:after {
+  content: '⏪'; }
+
+.ss-fastforward:before, .ss-fastforward.right:after {
+  content: '⏩'; }
+
+.ss-skipback:before, .ss-skipback.right:after {
+  content: '⏮'; }
+
+.ss-skipforward:before, .ss-skipforward.right:after {
+  content: '⏭'; }
+
+.ss-eject:before, .ss-eject.right:after {
+  content: '⏏'; }
+
+.ss-repeat:before, .ss-repeat.right:after {
+  content: '🔁'; }
+
+.ss-replay:before, .ss-replay.right:after {
+  content: '↺'; }
+
+.ss-shuffle:before, .ss-shuffle.right:after {
+  content: '🔀'; }
+
+.ss-book:before, .ss-book.right:after {
+  content: '📕'; }
+
+.ss-openbook:before, .ss-openbook.right:after {
+  content: '📖'; }
+
+.ss-notebook:before, .ss-notebook.right:after {
+  content: '📓'; }
+
+.ss-grid:before, .ss-grid.right:after {
+  content: ''; }
+
+.ss-rows:before, .ss-rows.right:after {
+  content: ''; }
+
+.ss-columns:before, .ss-columns.right:after {
+  content: ''; }
+
+.ss-thumbnails:before, .ss-thumbnails.right:after {
+  content: ''; }
+
+.ss-desktop:before, .ss-desktop.right:after {
+  content: '💻'; }
+
+.ss-laptop:before, .ss-laptop.right:after {
+  content: ''; }
+
+.ss-tablet:before, .ss-tablet.right:after {
+  content: ''; }
+
+.ss-cell:before, .ss-cell.right:after {
+  content: '📱'; }
+
+.ss-battery:before, .ss-battery.right:after {
+  content: '🔋'; }
+
+.ss-highbattery:before, .ss-highbattery.right:after {
+  content: ''; }
+
+.ss-mediumbattery:before, .ss-mediumbattery.right:after {
+  content: ''; }
+
+.ss-lowbattery:before, .ss-lowbattery.right:after {
+  content: ''; }
+
+.ss-emptybattery:before, .ss-emptybattery.right:after {
+  content: ''; }
+
+.ss-downloadcloud:before, .ss-downloadcloud.right:after {
+  content: ''; }
+
+.ss-download:before, .ss-download.right:after {
+  content: ''; }
+
+.ss-uploadcloud:before, .ss-uploadcloud.right:after {
+  content: ''; }
+
+.ss-upload:before, .ss-upload.right:after {
+  content: ''; }
+
+.ss-fork:before, .ss-fork.right:after {
+  content: ''; }
+
+.ss-merge:before, .ss-merge.right:after {
+  content: ''; }
+
+.ss-refresh:before, .ss-refresh.right:after {
+  content: '↻'; }
+
+.ss-sync:before, .ss-sync.right:after {
+  content: ''; }
+
+.ss-loading:before, .ss-loading.right:after {
+  content: ''; }
+
+.ss-wifi:before, .ss-wifi.right:after {
+  content: ''; }
+
+.ss-connection:before, .ss-connection.right:after {
+  content: ''; }
+
+.ss-file:before, .ss-file.right:after {
+  content: '📄'; }
+
+.ss-folder:before, .ss-folder.right:after {
+  content: '📁'; }
+
+.ss-quote:before, .ss-quote.right:after {
+  content: '“'; }
+
+.ss-text:before, .ss-text.right:after {
+  content: ''; }
+
+.ss-font:before, .ss-font.right:after {
+  content: ''; }
+
+.ss-print:before, .ss-print.right:after {
+  content: '⎙'; }
+
+.ss-fax:before, .ss-fax.right:after {
+  content: '📠'; }
+
+.ss-list:before, .ss-list.right:after {
+  content: ''; }
+
+.ss-layout:before, .ss-layout.right:after {
+  content: ''; }
+
+.ss-action:before, .ss-action.right:after {
+  content: ''; }
+
+.ss-redirect:before, .ss-redirect.right:after {
+  content: '↪'; }
+
+.ss-expand:before, .ss-expand.right:after {
+  content: '⤢'; }
+
+.ss-contract:before, .ss-contract.right:after {
+  content: ''; }
+
+.ss-help:before, .ss-help.right:after {
+  content: '❓'; }
+
+.ss-info:before, .ss-info.right:after {
+  content: 'ℹ'; }
+
+.ss-alert:before, .ss-alert.right:after {
+  content: '⚠'; }
+
+.ss-caution:before, .ss-caution.right:after {
+  content: '⛔'; }
+
+.ss-logout:before, .ss-logout.right:after {
+  content: ''; }
+
+.ss-plus:before, .ss-plus.right:after {
+  content: '+'; }
+
+.ss-hyphen:before, .ss-hyphen.right:after {
+  content: '-'; }
+
+.ss-check:before, .ss-check.right:after {
+  content: '✓'; }
+
+.ss-delete:before, .ss-delete.right:after {
+  content: '␡'; }
+
+.ss-settings:before, .ss-settings.right:after {
+  content: '⚙'; }
+
+.ss-dashboard:before, .ss-dashboard.right:after {
+  content: ''; }
+
+.ss-notifications:before, .ss-notifications.right:after {
+  content: '🔔'; }
+
+.ss-notificationsdisabled:before, .ss-notificationsdisabled.right:after {
+  content: '🔕'; }
+
+.ss-clock:before, .ss-clock.right:after {
+  content: '⏲'; }
+
+.ss-stopwatch:before, .ss-stopwatch.right:after {
+  content: '⏱'; }
+
+.ss-calendar:before, .ss-calendar.right:after {
+  content: '📅'; }
+
+.ss-addcalendar:before, .ss-addcalendar.right:after {
+  content: ''; }
+
+.ss-removecalendar:before, .ss-removecalendar.right:after {
+  content: ''; }
+
+.ss-checkcalendar:before, .ss-checkcalendar.right:after {
+  content: ''; }
+
+.ss-deletecalendar:before, .ss-deletecalendar.right:after {
+  content: ''; }
+
+.ss-briefcase:before, .ss-briefcase.right:after {
+  content: '💼'; }
+
+.ss-cloud:before, .ss-cloud.right:after {
+  content: '☁'; }
+
+.ss-droplet:before, .ss-droplet.right:after {
+  content: '💧'; }
+
+.ss-up:before, .ss-up.right:after {
+  content: '⬆'; }
+
+.ss-upright:before, .ss-upright.right:after {
+  content: '⬈'; }
+
+.ss-right:before, .ss-right.right:after {
+  content: '➡'; }
+
+.ss-downright:before, .ss-downright.right:after {
+  content: '⬊'; }
+
+.ss-down:before, .ss-down.right:after {
+  content: '⬇'; }
+
+.ss-downleft:before, .ss-downleft.right:after {
+  content: '⬋'; }
+
+.ss-left:before, .ss-left.right:after {
+  content: '⬅'; }
+
+.ss-upleft:before, .ss-upleft.right:after {
+  content: '⬉'; }
+
+.ss-navigateup:before, .ss-navigateup.right:after {
+  content: ''; }
+
+.ss-navigateright:before, .ss-navigateright.right:after {
+  content: '▻'; }
+
+.ss-navigatedown:before, .ss-navigatedown.right:after {
+  content: ''; }
+
+.ss-navigateleft:before, .ss-navigateleft.right:after {
+  content: '◅'; }
+
+.ss-directup:before, .ss-directup.right:after {
+  content: '▴'; }
+
+.ss-directright:before, .ss-directright.right:after {
+  content: '▹'; }
+
+.ss-dropdown:before, .ss-dropdown.right:after {
+  content: '▾'; }
+
+.ss-directleft:before, .ss-directleft.right:after {
+  content: '◃'; }
+
+.ss-retweet:before, .ss-retweet.right:after {
+  content: ''; }
+
+/* Legacy classes */
+.ss-volumelow:before, .ss-volumelow.right:after {
+  content: '🔉'; }
+
+.ss-volumehigh:before, .ss-volumehigh.right:after {
+  content: '🔊'; }
+
+.ss-batteryhigh:before, .ss-batteryhigh.right:after {
+  content: ''; }
+
+.ss-batterymedium:before, .ss-batterymedium.right:after {
+  content: ''; }
+
+.ss-batterylow:before, .ss-batterylow.right:after {
+  content: ''; }
+
+.ss-batteryempty:before, .ss-batteryempty.right:after {
+  content: ''; }
+
+.ss-clouddownload:before, .ss-clouddownload.right:after {
+  content: ''; }
+
+.ss-cloudupload:before, .ss-cloudupload.right:after {
+  content: ''; }
+
+.ss-calendaradd:before, .ss-calendaradd.right:after {
+  content: ''; }
+
+.ss-calendarremove:before, .ss-calendarremove.right:after {
+  content: ''; }
+
+.ss-calendarcheck:before, .ss-calendarcheck.right:after {
+  content: ''; }
+
+.ss-calendardelete:before, .ss-calendardelete.right:after {
+  content: ''; }
+
+.clearfix, .editable-list-area .editable-list, .editable-list-area .editable-list li {
   zoom: 1; }
-  .clearfix:before, .editable-list:before, .editable-list li:before, .clearfix:after, .editable-list:after, .editable-list li:after {
+  .clearfix:before, .editable-list-area .editable-list:before, .editable-list-area .editable-list li:before, .clearfix:after, .editable-list-area .editable-list:after, .editable-list-area .editable-list li:after {
     content: "";
     display: table; }
-  .clearfix:after, .editable-list:after, .editable-list li:after {
+  .clearfix:after, .editable-list-area .editable-list:after, .editable-list-area .editable-list li:after {
     clear: both; }
 
 * {
   -webkit-box-sizing: border-box;
   -moz-box-sizing: border-box;
   box-sizing: border-box; }
+
+@-webkit-keyframes slidedown {
+  0% {
+    max-height: 0; }
+
+  100% {
+    max-height: 500px; } }
+
+@-moz-keyframes slidedown {
+  0% {
+    max-height: 0; }
+
+  100% {
+    max-height: 500px; } }
+
+@-ms-keyframes slidedown {
+  0% {
+    max-height: 0; }
+
+  100% {
+    max-height: 500px; } }
+
+@keyframes slidedown {
+  0% {
+    max-height: 0; }
+
+  100% {
+    max-height: 500px; } }
 
 html, body {
   margin: 0;
@@ -38,6 +625,9 @@ h1 {
 header {
   text-align: center; }
 
+.container.list-area {
+  background: white; }
+
 .half {
   width: 49%;
   margin-right: 2%;
@@ -45,21 +635,33 @@ header {
   .half + .half {
     margin: 0; }
 
-.hidden {
-  opacity: 0;
+.hidden, .visible {
   -webkit-transition: all 0.2s ease-in-out;
   -moz-transition: all 0.2s ease-in-out;
   -ms-transition: all 0.2s ease-in-out;
   -o-transition: all 0.2s ease-in-out;
   transition: all 0.2s ease-in-out; }
 
+.hidden {
+  opacity: 0; }
+
 .visible {
-  opacity: 1;
-  -webkit-transition: all 0.2s ease-in-out;
-  -moz-transition: all 0.2s ease-in-out;
-  -ms-transition: all 0.2s ease-in-out;
-  -o-transition: all 0.2s ease-in-out;
-  transition: all 0.2s ease-in-out; }
+  opacity: 1; }
+
+.slideup, .slidedown {
+  overflow: hidden;
+  position: relative;
+  -webkit-transition: max-height 0.5s ease;
+  -moz-transition: max-height 0.5s ease;
+  -ms-transition: max-height 0.5s ease;
+  -o-transition: max-height 0.5s ease;
+  transition: max-height 0.5s ease; }
+
+.slideup {
+  max-height: 0; }
+
+.slidedown {
+  max-height: 500px !important; }
 
 form > label {
   font-size: 2em;
@@ -90,6 +692,46 @@ select {
   border: 1px solid #cccccc;
   background: url("../img/dropdown-icon.png") no-repeat scroll 85% 50% white;
   box-shadow: inset 0 -2px 3px rgba(0, 0, 0, 0.1); }
+
+.add-new-item {
+  padding: 0;
+  border: 0; }
+  .add-new-item .btn-plain {
+    position: absolute;
+    top: .5em;
+    right: .5em; }
+  .add-new-item form {
+    position: relative;
+    background: #d9fff1;
+    padding: 2em;
+    border-bottom: 1px solid rgba(0, 0, 0, 0.15); }
+    .add-new-item form > label {
+      font-size: 2em;
+      line-height: 1em;
+      font-weight: lighter;
+      color: #666666;
+      text-align: center; }
+    .add-new-item form fieldset {
+      position: relative;
+      border-top: 1px solid rgba(0, 0, 0, 0.1);
+      padding: 1em 0 0;
+      margin: 2em 0 0; }
+      .add-new-item form fieldset legend {
+        text-align: center;
+        font-size: 1.25em;
+        margin: 0 0 .25em;
+        padding: 0 .5em;
+        color: #999999;
+        font-weight: lighter; }
+      .add-new-item form fieldset .minimum-price select {
+        width: 18%;
+        margin: 0 4% 0 0;
+        float: left; }
+        .add-new-item form fieldset .minimum-price select + input {
+          width: 76%;
+          float: left; }
+      .add-new-item form fieldset + .btn {
+        margin-top: 1em; }
 
 .btn {
   display: block;
@@ -174,67 +816,6 @@ select {
     font-weight: 200;
     color: #00c077; }
 
-.list-area {
-  background: white; }
-
-.editable-list {
-  margin: 0;
-  padding: 0;
-  list-style: none; }
-  .editable-list li {
-    padding: 1em 1em 1em 3em;
-    background: rgba(255, 255, 255, 0.75);
-    border: 1px solid rgba(255, 255, 255, 0.5);
-    border-bottom-color: rgba(0, 0, 0, 0.15); }
-    .editable-list li h3 {
-      margin: 0 .5em 0 0;
-      font-size: 1.75em;
-      float: left; }
-    .editable-list li .price-range {
-      margin: 0;
-      font-size: 1.5em;
-      color: #999999;
-      float: right; }
-  .editable-list .add-new-item {
-    padding: 0;
-    border: 0; }
-    .editable-list .add-new-item .btn-plain {
-      position: absolute;
-      top: .5em;
-      right: .5em; }
-    .editable-list .add-new-item form {
-      position: relative;
-      background: #d9fff1;
-      padding: 2em;
-      border-bottom: 1px solid rgba(0, 0, 0, 0.15); }
-      .editable-list .add-new-item form > label {
-        font-size: 2em;
-        line-height: 1em;
-        font-weight: lighter;
-        color: #666666;
-        text-align: center; }
-      .editable-list .add-new-item form fieldset {
-        position: relative;
-        border-top: 1px solid rgba(0, 0, 0, 0.1);
-        padding: 1em 0 0;
-        margin: 2em 0 0; }
-        .editable-list .add-new-item form fieldset legend {
-          text-align: center;
-          font-size: 1.25em;
-          margin: 0 0 .25em;
-          padding: 0 .5em;
-          color: #999999;
-          font-weight: lighter; }
-        .editable-list .add-new-item form fieldset .minimum-price select {
-          width: 18%;
-          margin: 0 4% 0 0;
-          float: left; }
-          .editable-list .add-new-item form fieldset .minimum-price select + input {
-            width: 76%;
-            float: left; }
-        .editable-list .add-new-item form fieldset + .btn {
-          margin-top: 1em; }
-
 .items-total-cost {
   padding: 1em;
   text-align: center; }
@@ -248,3 +829,101 @@ select {
     padding: 0;
     font-size: 3em;
     text-align: center; }
+
+.editable-list-area {
+  border-top: 1px solid rgba(0, 0, 0, 0.15);
+  padding-top: 1em; }
+  .editable-list-area h4 {
+    text-align: center;
+    margin: 0 0 .5em;
+    font-weight: normal;
+    color: #cccccc; }
+  .editable-list-area .editable-list {
+    margin: 0;
+    padding: 0;
+    list-style: none; }
+    .editable-list-area .editable-list li {
+      padding: 1em 1em 1em 3em;
+      background: rgba(255, 255, 255, 0.75);
+      border-bottom: 1px solid rgba(0, 0, 0, 0.05);
+      position: relative;
+      -webkit-transition: all 0.5s;
+      -moz-transition: all 0.5s;
+      -ms-transition: all 0.5s;
+      -o-transition: all 0.5s;
+      transition: all 0.5s; }
+      .editable-list-area .editable-list li h3 {
+        margin: 0 .5em 0 0;
+        font-size: 1.75em;
+        float: left; }
+      .editable-list-area .editable-list li .price-range {
+        margin: 0;
+        font-size: 1.5em;
+        color: #999999;
+        float: right; }
+      .editable-list-area .editable-list li .checkbox-toggle {
+        position: absolute;
+        left: 1em;
+        top: 1em;
+        width: 1em;
+        height: 1em;
+        background: #efefef;
+        border: 1px solid #d7d7d7; }
+        .editable-list-area .editable-list li .checkbox-toggle:after {
+          content: "\2713";
+          color: #999999;
+          opacity: 0;
+          -webkit-transition: all 0.2s;
+          -moz-transition: all 0.2s;
+          -ms-transition: all 0.2s;
+          -o-transition: all 0.2s;
+          transition: all 0.2s; }
+        .editable-list-area .editable-list li .checkbox-toggle:hover {
+          cursor: pointer;
+          background: #ebebeb;
+          border-color: #cccccc; }
+          .editable-list-area .editable-list li .checkbox-toggle:hover:after {
+            opacity: 1; }
+        .editable-list-area .editable-list li .checkbox-toggle.selected:after {
+          opacity: 1;
+          color: #007348; }
+        .editable-list-area .editable-list li .checkbox-toggle.selected:hover:after {
+          color: #0dffa4; }
+      .editable-list-area .editable-list li.bought {
+        background: #ebebeb;
+        color: #999999; }
+      .editable-list-area .editable-list li.deleted {
+        background: #ffcccc;
+        color: red;
+        opacity: 0;
+        -webkit-transition: opacity 1s;
+        -moz-transition: opacity 1s;
+        -ms-transition: opacity 1s;
+        -o-transition: opacity 1s;
+        transition: opacity 1s; }
+        .editable-list-area .editable-list li.deleted .checkbox-toggle {
+          background: #ffcccc;
+          border-color: #ff6666; }
+          .editable-list-area .editable-list li.deleted .checkbox-toggle:after {
+            color: #990000; }
+      .editable-list-area .editable-list li.empty-list {
+        background: #ebebeb;
+        text-align: center;
+        padding: 0 1em;
+        overflow: hidden;
+        -webkit-animation: slidedown 1.5s 1;
+        animation: slidedown 1.5s 1; }
+        .editable-list-area .editable-list li.empty-list .ss-icon {
+          font-size: 3em;
+          color: #cccccc;
+          margin: 1em 0 .25em;
+          line-height: 1em;
+          display: block; }
+        .editable-list-area .editable-list li.empty-list p {
+          color: #999999;
+          font-size: 1.5em;
+          line-height: 1.25em;
+          width: 80%;
+          margin: 0 auto 1.5em; }
+      .editable-list-area .editable-list li:last-child {
+        border-bottom: 0; }

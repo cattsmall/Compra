@@ -28,6 +28,9 @@ header {
 }
 
 .container {
+  &.list-area {
+    background:$white;
+  }
 }
 
 .half {
@@ -40,12 +43,28 @@ header {
 	}
 }
 
+.hidden, .visible {
+  @include transition;
+}
+
 .hidden {
   opacity:0;
-  @include transition;
 }
 
 .visible {
   opacity:1;
-  @include transition;
+}
+
+.slideup, .slidedown {
+  overflow:hidden;
+  position: relative;
+  @include transition(max-height .5s ease);
+}
+
+.slideup {
+  max-height:0;
+}
+
+.slidedown {
+  max-height:500px !important;  
 }
