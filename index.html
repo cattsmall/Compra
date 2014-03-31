@@ -27,9 +27,9 @@
 					Cancel
 				</button>
         <div ng-class="{slideup: !addItem, slidedown: addItem}">
-  				<form>
+  				<form novalidate name="addForm">
   					<label>What do you want to buy?</label>
-  					<input type="text" placeholder="Enter the item's name" ng-model="newItem.name">
+  					<input type="text" required placeholder="Enter the item's name" ng-model="newItem.name">
 					
   					<fieldset>
   						<legend>How much do you want to spend?</legend>
@@ -41,16 +41,21 @@
   								<option value="EUR">€</option>
   								<option value="JPY">¥</option>
   							</select>
-  							<input type="text" placeholder="Minimum price ({{newItem.currencySign}})" ng-model="newItem.minPrice">
+  							<input type="number" required placeholder="Minimum price ({{newItem.currencySign}})" ng-model="newItem.minPrice">
   						</div>
   						<div class="half">
   							<label>Max:</label>
-  							<input type="text" placeholder="Maximum price ({{newItem.currencySign}})" ng-model="newItem.maxPrice">
+  							<input type="number" required min="{{newItem.minPrice}}" placeholder="Maximum price ({{newItem.currencySign}})" ng-model="newItem.maxPrice">
   						</div>
   					</fieldset>
-  					<button class="btn" ng-click="addToList(newItem); addItem = false;">
-  						<i class="ss-icon ss-standard">&#x2713;</i>
-  						Save to list
+  					<button class="btn" ng-disabled="addForm.$invalid" ng-click="addToList(newItem); addItem = false; addForm.$setPristine();">
+              <span ng-if="addForm.$invalid">
+    						Fill out the above first
+              </span>
+              <span ng-if="!addForm.$invalid">
+    						<i class="ss-icon ss-standard">&#x2713;</i>
+    						Save to list
+              </span>
   					</button>
   				</form>
         </div>

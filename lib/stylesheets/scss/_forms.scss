@@ -29,6 +29,10 @@ input {
     &:focus {
       outline:none;
     }
+    
+    &.ng-invalid.ng-dirty {
+      border-color:$red;
+    }
 	}
 }
 
