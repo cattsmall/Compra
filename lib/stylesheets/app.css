@@ -946,6 +946,6 @@ select {
     font-size: 1em; }
 
   .add-new-item form fieldset .minimum-price select {
-    width: 25%; }
+    width: 27%; }
     .add-new-item form fieldset .minimum-price select + input {
-      width: 70%; } }
+      width: 68%; } }
