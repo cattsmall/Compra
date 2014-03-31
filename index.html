@@ -39,9 +39,9 @@
   							<label>Min:</label>
   							<select ng-model="newItem.currency" ng-change="setCurrency(newItem);">
   								<option value="USD">$</option>
-  								<option value="GBP">£</option>
-  								<option value="EUR">€</option>
-  								<option value="JPY">¥</option>
+                  <!-- <option value="GBP">£</option>
+                  <option value="EUR">€</option>
+                  <option value="JPY">¥</option> -->
   							</select>
   							<input type="number" required min="0" ng-max="{{newItem.maxPrice}}" placeholder="Minimum price ({{newItem.currencySign}})" ng-model="newItem.minPrice">
   						</div>
@@ -65,7 +65,10 @@
       
 			<aside class="items-total-cost">
 				<h4>Total amount you'll spend:</h4>
-				<input type="text" disabled value="{{defaultCurrencySign}}{{totalMinPrice}} - {{defaultCurrencySign}}{{totalMaxPrice}}">
+				<p>
+          {{defaultCurrencySign}}{{totalMinPrice}}
+          <span ng-if="totalMinPrice != totalMaxPrice">- {{defaultCurrencySign}}{{item.currencySign}}{{totalMaxPrice}}</span>
+        </p>
 			</aside>
       <section class="editable-list-area">
   			<h4>You want to buy:</h4>
