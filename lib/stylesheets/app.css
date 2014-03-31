@@ -32,8 +32,7 @@ body {
 h1 {
   margin: 0 0 .25em;
   font-family: "Lobster Two", cursive;
-  font-size: 4em;
-  line-height: .75em;
+  line-height: 1em;
   font-style: italic; }
 
 header {
@@ -159,6 +158,8 @@ select {
   display: table;
   width: 100%;
   height: 100%; }
+  .app-intro.hidden {
+    z-index: -1; }
   .app-intro .container {
     background: #d9fff1;
     box-shadow: inset 0 0 40px #a6ffde;
@@ -166,6 +167,12 @@ select {
     vertical-align: middle;
     text-align: center;
     display: table-cell; }
+  .app-intro h1 {
+    font-size: 8em;
+    color: #004028; }
+  .app-intro h2 {
+    font-weight: 200;
+    color: #00c077; }
 
 .list-area {
   background: white; }
