@@ -10,6 +10,16 @@
 	  <script src="lib/scripts/controllers.js"></script>
 	  <script src="lib/scripts/directives.js"></script>
 	  <script src="lib/scripts/services.js"></script>
+    <script type="text/javascript">
+        // it will display smart banner at top center, using the default options
+      if (AdMob) {
+        console.log(AdMob);
+        AdMob.createBanner( {
+        adId: "ca-app-pub-2556143574102425/3424647195", 
+        position: AdMob.AD_POSITION.BOTTOM_CENTER, 
+        autoShow: true });
+      }
+    </script>
 	</head>
 	<body ng-controller="listCtrl">
 		<section class="container list-area">
