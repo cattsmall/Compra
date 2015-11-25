@@ -1,5 +1,5 @@
 <!doctype html>
-<html lang="en" ng-app="listApp">
+<html lang="en" ng-app="listApp" onload="runads()">
 	<head>
 		<meta charset="utf-8">
 		<title>Compra - A shopping list that helps you budget</title>
@@ -10,19 +10,6 @@
 	  <script src="lib/scripts/controllers.js"></script>
 	  <script src="lib/scripts/directives.js"></script>
 	  <script src="lib/scripts/services.js"></script>
-    <script type="text/javascript">
-      if (AdMob) {
-        // prepare at beginning
-        AdMob.prepareInterstitial({
-            adId: "ca-app-pub-2556143574102425/7854846793",
-            autoShow: false
-        });
-        // check and show it at end of a game level
-        AdMob.isInterstitialReady(function(isready){
-            if(isready) AdMob.showInterstitial();
-        });
-      }
-    </script>
 	</head>
 	<body ng-controller="listCtrl">
 		<section class="container list-area">
@@ -100,4 +87,45 @@
 			</button>
 		</section>
 	</body>
+  <script type="text/javascript">// <![CDATA[
+  function runads(){
+    document.addEventListener("deviceready", onDeviceReady, false);
+  }
+ 
+  function initAds() {
+    if (AdMob) {
+      var adPublisherIds = {
+        android : {
+          banner : "ca-app-pub-2556143574102425/1808313196",
+          interstitial : "ca-app-pub-2556143574102425/1808313196"
+        }
+      };
+ 
+      registerAdEvents();
+ 
+    } else {
+      alert('AdMobAds plugin not ready');
+    }
+  }
+ 
+  function onAdLoaded(e) {
+    if (e.adType === AdMob.AD_TYPE.INTERSTITIAL) {
+      AdMob.showInterstitialAd();
+      showNextInterstitial = setTimeout(function() {
+        AdMob.requestInterstitialAd();
+      }, 2 * 60 * 1000); // 2 minutes
+    }
+  }
+ 
+  function onDeviceReady() {
+    document.removeEventListener('deviceready', onDeviceReady, false);
+    initAds();
+ 
+    // display a banner at startup
+    AdMob.createBannerView();
+ 
+    // request an interstitial
+    AdMob.requestInterstitialAd();
+  }
+// ]]></script>
 </html>

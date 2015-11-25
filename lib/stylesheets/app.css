@@ -887,17 +887,9 @@ select {
           color: #999999;
           content: "\2713";
           opacity: 0; }
-        .editable-list-area .editable-list li .checkbox-toggle:hover {
-          background: #ebebeb;
-          border-color: #cccccc;
-          cursor: pointer; }
-          .editable-list-area .editable-list li .checkbox-toggle:hover:after {
-            opacity: 1; }
         .editable-list-area .editable-list li .checkbox-toggle.selected:after {
           opacity: 1;
           color: #007348; }
-        .editable-list-area .editable-list li .checkbox-toggle.selected:hover:after {
-          color: #0DFFA4; }
       .editable-list-area .editable-list li.bought {
         background: #ebebeb;
         color: #999999; }

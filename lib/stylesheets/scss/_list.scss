@@ -73,26 +73,10 @@
           opacity:0;
         }
         
-        &:hover {
-          background:$grayL2;
-          border-color: $gray;
-          cursor:pointer;
-          
-          &:after {
-            opacity:1;
-          }
-        }
-        
         &.selected {
           &:after {
             opacity:1;
             color:$greenD2;
-          }
-          
-          &:hover {
-            &:after {
-              color:$green;
-            }
           }
         }
       }
