@@ -868,6 +868,7 @@ select {
         color: #999999;
         float: right;
         font-size: 1.5em;
+        line-height: 1.1em;
         margin: 0; }
       .editable-list-area .editable-list li .checkbox-toggle {
         background: #efefef;
@@ -875,7 +876,7 @@ select {
         height: 1em;
         left: 1em;
         position: absolute;
-        top: 1em;
+        top: 1.5em;
         width: 1em; }
         .editable-list-area .editable-list li .checkbox-toggle:after {
           -webkit-transition: all 0.2s;
