@@ -850,45 +850,46 @@ select {
     padding: 0;
     list-style: none; }
     .editable-list-area .editable-list li {
-      padding: 1em 1em 1em 3em;
       background: rgba(255, 255, 255, 0.75);
       border-bottom: 1px solid rgba(0, 0, 0, 0.05);
-      position: relative;
+      padding: 1em 1em 1em 3em;
       -webkit-transition: all 0.5s;
       -moz-transition: all 0.5s;
       -ms-transition: all 0.5s;
       -o-transition: all 0.5s;
-      transition: all 0.5s; }
+      transition: all 0.5s;
+      position: relative; }
       .editable-list-area .editable-list li h3 {
-        margin: 0 .5em 0 0;
+        float: left;
         font-size: 1.75em;
-        float: left; }
+        line-height: 1.1em;
+        margin: 0 .5em 0 0; }
       .editable-list-area .editable-list li .price-range {
-        margin: 0;
-        font-size: 1.5em;
         color: #999999;
-        float: right; }
+        float: right;
+        font-size: 1.5em;
+        margin: 0; }
       .editable-list-area .editable-list li .checkbox-toggle {
-        position: absolute;
-        left: 1em;
-        top: 1em;
-        width: 1em;
-        height: 1em;
         background: #efefef;
-        border: 1px solid #d7d7d7; }
+        border: 1px solid #d7d7d7;
+        height: 1em;
+        left: 1em;
+        position: absolute;
+        top: 1em;
+        width: 1em; }
         .editable-list-area .editable-list li .checkbox-toggle:after {
-          content: "\2713";
-          color: #999999;
-          opacity: 0;
           -webkit-transition: all 0.2s;
           -moz-transition: all 0.2s;
           -ms-transition: all 0.2s;
           -o-transition: all 0.2s;
-          transition: all 0.2s; }
+          transition: all 0.2s;
+          color: #999999;
+          content: "\2713";
+          opacity: 0; }
         .editable-list-area .editable-list li .checkbox-toggle:hover {
-          cursor: pointer;
           background: #ebebeb;
-          border-color: #cccccc; }
+          border-color: #cccccc;
+          cursor: pointer; }
           .editable-list-area .editable-list li .checkbox-toggle:hover:after {
             opacity: 1; }
         .editable-list-area .editable-list li .checkbox-toggle.selected:after {
@@ -900,38 +901,38 @@ select {
         background: #ebebeb;
         color: #999999; }
       .editable-list-area .editable-list li.deleted {
-        background: #ffcccc;
-        color: #FF0000;
-        opacity: 0;
         -webkit-transition: opacity 1s;
         -moz-transition: opacity 1s;
         -ms-transition: opacity 1s;
         -o-transition: opacity 1s;
-        transition: opacity 1s; }
+        transition: opacity 1s;
+        background: #ffcccc;
+        color: #FF0000;
+        opacity: 0; }
         .editable-list-area .editable-list li.deleted .checkbox-toggle {
           background: #ffcccc;
           border-color: #ff6666; }
           .editable-list-area .editable-list li.deleted .checkbox-toggle:after {
             color: #990000; }
       .editable-list-area .editable-list li.empty-list {
-        background: #ebebeb;
-        text-align: center;
-        padding: 0 1em;
-        overflow: hidden;
         -webkit-animation: slidedown 1.5s 1;
-        animation: slidedown 1.5s 1; }
+        animation: slidedown 1.5s 1;
+        background: #ebebeb;
+        overflow: hidden;
+        padding: 0 1em;
+        text-align: center; }
         .editable-list-area .editable-list li.empty-list .ss-icon {
-          font-size: 3em;
           color: #cccccc;
-          margin: 1em 0 .25em;
+          display: block;
+          font-size: 3em;
           line-height: 1em;
-          display: block; }
+          margin: 1em 0 .25em; }
         .editable-list-area .editable-list li.empty-list p {
           color: #999999;
           font-size: 1.5em;
           line-height: 1.25em;
-          width: 80%;
-          margin: 0 auto 0; }
+          margin: 0 auto 0;
+          width: 80%; }
           .editable-list-area .editable-list li.empty-list p:last-child {
             margin-bottom: 1.5em; }
       .editable-list-area .editable-list li:last-child {
