@@ -31,17 +31,18 @@
   						<legend>How much do you want to spend?</legend>
   						<div class="half minimum-price">
   							<label>Min:</label>
-  							<select ng-model="newItem.currency" ng-change="setCurrency(newItem);">
+                <span class="currencySign">{{newItem.currencySign}}</span>
+  							<!-- <select ng-model="newItem.currency" ng-change="setCurrency(newItem);">
   								<option value="USD">$</option>
-                  <!-- <option value="GBP">£</option>
+                  <option value="GBP">£</option>
                   <option value="EUR">€</option>
-                  <option value="JPY">¥</option> -->
-  							</select>
-  							<input type="number" required min="0" ng-max="{{newItem.maxPrice}}" placeholder="Minimum price ({{newItem.currencySign}})" ng-model="newItem.minPrice">
+                  <option value="JPY">¥</option>
+  							</select> -->
+  							<input type="number" required min="0" ng-max="{{newItem.maxPrice}}" placeholder="Low price ({{newItem.currencySign}})" ng-model="newItem.minPrice">
   						</div>
   						<div class="half">
   							<label>Max:</label>
-  							<input type="number" required ng-min="{{newItem.minPrice || 0}}" placeholder="Maximum price ({{newItem.currencySign}})" ng-model="newItem.maxPrice">
+  							<input type="number" required ng-min="{{newItem.minPrice || 0}}" placeholder="High price ({{newItem.currencySign}})" ng-model="newItem.maxPrice">
   						</div>
   					</fieldset>
   					<button class="btn" ng-disabled="addForm.$invalid" ng-click="addToList(newItem); addItem = false; addForm.$setPristine();">

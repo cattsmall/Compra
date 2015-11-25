@@ -16,7 +16,6 @@
   src: url("../fonts/ss-standard/ss-standard.eot?#iefix") format("embedded-opentype"), url("../fonts/ss-standard/ss-standard.woff") format("woff"), url("../fonts/ss-standard/ss-standard.ttf") format("truetype"), url("../fonts/ss-standard/ss-standard.svg#SSStandard") format("svg");
   font-weight: normal;
   font-style: normal; }
-
 .ss-icon, .ss-icon.ss-standard, .editable-list-area .editable-list li .checkbox-toggle:after,
 [class^="ss-"]:before, [class*=" ss-"]:before,
 [class^="ss-"].ss-standard:before, [class*=" ss-"].ss-standard:before,
@@ -576,31 +575,23 @@
 @-webkit-keyframes slidedown {
   0% {
     max-height: 0; }
-
   100% {
     max-height: 500px; } }
-
 @-moz-keyframes slidedown {
   0% {
     max-height: 0; }
-
   100% {
     max-height: 500px; } }
-
 @-ms-keyframes slidedown {
   0% {
     max-height: 0; }
-
   100% {
     max-height: 500px; } }
-
 @keyframes slidedown {
   0% {
     max-height: 0; }
-
   100% {
     max-height: 500px; } }
-
 html, body {
   margin: 0;
   padding: 0; }
@@ -626,7 +617,7 @@ header {
   text-align: center; }
 
 .container.list-area {
-  background: white; }
+  background: #ffffff; }
 
 .half {
   width: 49%;
@@ -685,7 +676,7 @@ input:not([type="submit"]) {
   input:not([type="submit"]):focus {
     outline: none; }
   input:not([type="submit"]).ng-invalid.ng-dirty {
-    border-color: red; }
+    border-color: #FF0000; }
     input:not([type="submit"]).ng-invalid.ng-dirty.ng-valid-ng-min:not(.ng-invalid-ng-max), input:not([type="submit"]).ng-invalid.ng-dirty.ng-valid-ng-max:not(.ng-invalid-ng-min) {
       border-color: #cccccc; }
 
@@ -694,7 +685,7 @@ select {
   padding: .5em;
   font-size: 1em;
   border: 1px solid #cccccc;
-  background: url("../img/dropdown-icon.png") no-repeat scroll 85% 50% white;
+  background: url("../img/dropdown-icon.png") no-repeat scroll 85% 50% #ffffff;
   box-shadow: inset 0 -2px 3px rgba(0, 0, 0, 0.1); }
 
 .add-new-item {
@@ -727,13 +718,18 @@ select {
         padding: 0 .5em;
         color: #999999;
         font-weight: lighter; }
-      .add-new-item form fieldset .minimum-price select {
-        width: 18%;
+      .add-new-item form fieldset .minimum-price select, .add-new-item form fieldset .minimum-price .currencySign {
+        width: 8%;
         margin: 0 4% 0 0;
         float: left; }
-        .add-new-item form fieldset .minimum-price select + input {
-          width: 76%;
+        .add-new-item form fieldset .minimum-price select + input, .add-new-item form fieldset .minimum-price .currencySign + input {
+          width: 82%;
           float: left; }
+      .add-new-item form fieldset .minimum-price .currencySign {
+        font-size: 1.5em;
+        vertical-align: middle;
+        line-height: 1.5em;
+        text-align: right; }
       .add-new-item form fieldset + .btn {
         margin-top: 1em; }
 
@@ -748,7 +744,7 @@ select {
   -moz-border-radius: 4px;
   border-radius: 4px;
   border: 1px solid rgba(0, 0, 0, 0.25);
-  color: white;
+  color: #ffffff;
   background: #00c077;
   box-shadow: inset 0 0 2px rgba(255, 255, 255, 0.5);
   text-shadow: 0 -3px 0 rgba(0, 0, 0, 0.15);
@@ -759,7 +755,7 @@ select {
     opacity: .5; }
   .btn:hover {
     cursor: pointer;
-    background: #0dffa4; }
+    background: #0DFFA4; }
     .btn:hover .ss-icon {
       opacity: .75; }
   .btn:active {
@@ -778,11 +774,11 @@ select {
     border-radius: 0; }
   .btn.btn-danger {
     border-radius: 0;
-    background: red; }
+    background: #FF0000; }
     .btn.btn-danger:hover {
       background: #ff6666; }
     .btn.btn-danger:active {
-      background: red; }
+      background: #FF0000; }
   .btn.btn-plain {
     width: auto;
     padding: 0;
@@ -793,7 +789,7 @@ select {
     .btn.btn-plain .ss-icon {
       opacity: 1; }
     .btn.btn-plain:hover {
-      color: red;
+      color: #FF0000;
       background: none; }
     .btn.btn-plain:active {
       background: none;
@@ -898,13 +894,13 @@ select {
           opacity: 1;
           color: #007348; }
         .editable-list-area .editable-list li .checkbox-toggle.selected:hover:after {
-          color: #0dffa4; }
+          color: #0DFFA4; }
       .editable-list-area .editable-list li.bought {
         background: #ebebeb;
         color: #999999; }
       .editable-list-area .editable-list li.deleted {
         background: #ffcccc;
-        color: red;
+        color: #FF0000;
         opacity: 0;
         -webkit-transition: opacity 1s;
         -moz-transition: opacity 1s;

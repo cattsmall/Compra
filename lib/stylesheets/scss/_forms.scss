@@ -93,15 +93,22 @@ select {
 			}
 			
 			.minimum-price {
-				select {
-					width:18%;
+				select, .currencySign {
+					width:8%;
 					margin:0 4% 0 0;
 					float:left;
 					
 					+ input {
-						width:76%;
+						width:82%;
 						float:left;
 					}
+				}
+
+				.currencySign {
+					font-size: 1.5em;
+					vertical-align: middle;
+				    line-height: 1.5em;
+				    text-align: right;
 				}
 			}
 			
