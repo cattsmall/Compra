@@ -869,7 +869,7 @@ select {
         float: right;
         font-size: 1.5em;
         line-height: 1.1em;
-        margin: 0; }
+        margin: 5px 0 0 0; }
       .editable-list-area .editable-list li .checkbox-toggle {
         background: #efefef;
         border: 1px solid #d7d7d7;
