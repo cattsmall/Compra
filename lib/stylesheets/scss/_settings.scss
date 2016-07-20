@@ -1,0 +1,43 @@
+.app-footer {
+  text-align: center;
+  padding: 1em;
+
+  .btn {
+    margin: 0 auto;
+    font-size: 1em;
+
+    &:hover {
+      color: $greenD2;
+    }
+  }
+}
+
+.app-settings-container {
+  position: fixed;
+  background: fade-out($black,.85);
+  top:0;
+  bottom:0;
+  left:0;
+  right: 0;
+  display: flex;
+  padding: 1em;
+  justify-content: center;
+  align-items: center;
+
+  .app-settings {
+    background: $white;
+    width:100%;
+    max-width: 640px;
+    padding: 2em;
+
+    .app-settings-header {
+      display: flex;
+      justify-content: space-between;
+      align-items: baseline;
+    }
+
+    h2 {
+      margin-top: 0;
+    }
+  }
+}

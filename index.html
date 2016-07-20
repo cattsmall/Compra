@@ -14,7 +14,7 @@
 	<body ng-controller="listCtrl">
 		<section class="container list-area">
 			<section class="add-new-item">
-				<button class="btn btn-primary" ng-show="!addItem" ng-click="addItem = true; setCurrency(newItem);">
+				<button class="btn btn-primary" ng-show="!addItem" ng-click="addItem = true;">
 					<i class="ss-icon ss-standard">&#x002B;</i>
 					Add to your list
 				</button>
@@ -31,18 +31,12 @@
   						<legend>How much do you want to spend?</legend>
   						<div class="half minimum-price">
   							<label>Min:</label>
-                <span class="currencySign">{{newItem.currencySign}}</span>
-  							<!-- <select ng-model="newItem.currency" ng-change="setCurrency(newItem);">
-  								<option value="USD">$</option>
-                  <option value="GBP">£</option>
-                  <option value="EUR">€</option>
-                  <option value="JPY">¥</option>
-  							</select> -->
-  							<input type="number" required min="0" ng-max="{{newItem.maxPrice}}" placeholder="Low price ({{newItem.currencySign}})" ng-model="newItem.minPrice">
+                <span class="currencySign">{{defaultCurrencySign}}</span>
+  							<input type="number" required min="0" ng-max="{{newItem.maxPrice}}" placeholder="Low price ({{defaultCurrencySign}})" ng-model="newItem.minPrice">
   						</div>
   						<div class="half">
   							<label>Max:</label>
-  							<input type="number" required ng-min="{{newItem.minPrice || 0}}" placeholder="High price ({{newItem.currencySign}})" ng-model="newItem.maxPrice">
+  							<input type="number" required ng-min="{{newItem.minPrice || 0}}" placeholder="High price ({{defaultCurrencySign}})" ng-model="newItem.maxPrice">
   						</div>
   					</fieldset>
   					<button class="btn" ng-disabled="addForm.$invalid" ng-click="addToList(newItem); addItem = false; addForm.$setPristine();">
@@ -62,7 +56,7 @@
 				<h4>Total amount you'll spend:</h4>
 				<p>
           {{defaultCurrencySign}}{{totalMinPrice}}
-          <span ng-if="totalMinPrice != totalMaxPrice">- {{defaultCurrencySign}}{{item.currencySign}}{{totalMaxPrice}}</span>
+          <span ng-if="totalMinPrice != totalMaxPrice">- {{defaultCurrencySign}}{{totalMaxPrice}}</span>
         </p>
 			</aside>
       <section class="editable-list-area">
@@ -71,7 +65,7 @@
   				<li ng-repeat="item in wantedItems track by $index" ng-class="{bought: item.bought, deleted: item.toRemove}" ng-click="toggleBought(item);">
             <div class="checkbox-toggle" ng-class="{selected: item.bought}"></div>
   					<h3>{{item.name}}</h3>
-  					<p class="price-range">{{item.currencySign}}{{item.minPrice}} - {{item.currencySign}}{{item.maxPrice}}</p>
+  					<p class="price-range">{{defaultCurrencySign}}{{item.minPrice}} - {{defaultCurrencySign}}{{item.maxPrice}}</p>
   				</li>
           <li class="empty-list" ng-if="boughtItems == 0 && wantedItems.length == 0">
      				<i class="ss-icon ss-standard">&#x26A0;</i>
@@ -86,6 +80,36 @@
 				Remove purchased items
 			</button>
 		</section>
+    <footer class="app-footer">
+      <button class="btn btn-plain" ng-click="toggleSettings()">
+        <i class="ss-icon ss-standard">&#x2699;</i>
+        Change currency
+      </button>
+    </footer>
+    <section class="app-settings-container" ng-if="showSettings">
+      <div class="app-settings">
+        <header class="app-settings-header">
+          <h2>Select your currency</h2>
+          <button class="btn btn-plain app-settings-close" ng-click="toggleSettings()">
+            <i class="ss-icon ss-standard">&#x2421;</i>
+          </button>
+        </header>
+        <ul class="btn-group">
+          <li>
+            <button class="btn btn-toggle" ng-click="setCurrency('USD')" ng-class="{'btn-active' : defaultCurrency == 'USD'}">$ (Dollar)</button>
+          </li>
+          <li>
+            <button class="btn btn-toggle" ng-click="setCurrency('EUR')" ng-class="{'btn-active' : defaultCurrency == 'EUR'}">€ (Euro)</button>
+          </li>
+          <li>
+            <button class="btn btn-toggle" ng-click="setCurrency('GBP')" ng-class="{'btn-active' : defaultCurrency == 'GBP'}">£ (Pound)</button>
+          </li>
+          <li>
+            <button class="btn btn-toggle" ng-click="setCurrency('JPY')" ng-class="{'btn-active' : defaultCurrency == 'JPY'}">¥ (Yen)</button>
+          </li>
+        </ul>
+      </div>
+    </section>
 	</body>
   <script type="text/javascript">// <![CDATA[
   function runads(){

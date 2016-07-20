@@ -653,6 +653,9 @@ header {
 .slidedown {
   max-height: 500px !important; }
 
+.noScroll {
+  overflow: hidden; }
+
 form > label {
   font-size: 2em;
   line-height: 1em; }
@@ -756,8 +759,8 @@ select {
     background: #00f397; }
     .btn:hover .ss-icon {
       opacity: .75; }
-  .btn:active {
-    background: #00c077;
+  .btn:active, .btn.btn-active {
+    background: #007348;
     box-shadow: inset 0 3px 0 rgba(0, 0, 0, 0.25);
     transition: all .1s;
     padding-top: .6em;
@@ -795,6 +798,11 @@ select {
     .btn.btn-plain:active {
       background: none;
       box-shadow: none; }
+
+.btn-group {
+  list-style: none;
+  margin: 0;
+  padding: 0; }
 
 .app-intro {
   position: absolute;
@@ -931,6 +939,38 @@ select {
       .editable-list-area .editable-list li:last-child {
         border-bottom: 0; }
 
+.app-footer {
+  text-align: center;
+  padding: 1em; }
+  .app-footer .btn {
+    margin: 0 auto;
+    font-size: 1em; }
+    .app-footer .btn:hover {
+      color: #00c077; }
+
+.app-settings-container {
+  position: fixed;
+  background: rgba(0, 0, 0, 0.15);
+  top: 0;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  display: flex;
+  padding: 1em;
+  justify-content: center;
+  align-items: center; }
+  .app-settings-container .app-settings {
+    background: #ffffff;
+    width: 100%;
+    max-width: 640px;
+    padding: 2em; }
+    .app-settings-container .app-settings .app-settings-header {
+      display: flex;
+      justify-content: space-between;
+      align-items: baseline; }
+    .app-settings-container .app-settings h2 {
+      margin-top: 0; }
+
 @media screen and (max-width: 550px) {
   .app-intro h1 {
     font-size: 5em; }
@@ -940,4 +980,17 @@ select {
   .add-new-item form fieldset .minimum-price select {
     width: 27%; }
     .add-new-item form fieldset .minimum-price select + input {
-      width: 68%; } }
+      width: 68%; }
+
+  .btn-group li + li {
+    margin-top: .5em; } }
+@media screen and (min-width: 551px) {
+  .btn-group {
+    display: flex;
+    justify-content: space-between;
+    flex-wrap: wrap; }
+    .btn-group li {
+      width: calc(50% - .25em);
+      margin-bottom: .5em; }
+      .btn-group li:nth-last-child(-n+2) {
+        margin-bottom: 0; } }

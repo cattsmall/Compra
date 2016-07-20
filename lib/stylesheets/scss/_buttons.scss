@@ -27,8 +27,8 @@
 		}
 	}
 
-	&:active {
-		background: $greenD2;
+	&:active, &.btn-active {
+		background: $greenD3;
 		box-shadow: inset 0 3px 0 fade-out($black, .75);
 		transition: all .1s;
     padding-top: .6em;
@@ -89,4 +89,10 @@
   		box-shadow:none;
 		}
   }
+}
+
+.btn-group {
+  list-style: none;
+  margin: 0;
+  padding: 0;
 }
