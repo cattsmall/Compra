@@ -1,13 +1,13 @@
 .items-total-cost {
   padding:1em;
   text-align:center;
-  
+
 	h4 {
 		margin:0 0 .5em;
     font-weight:normal;
     color:$gray;
 	}
-	
+
 	p {
     margin:0;
 		padding:0;
@@ -19,20 +19,20 @@
 .editable-list-area {
   border-top: 1px solid fade-out($black,.85);
   padding-top:1em;
-  
+
 	h4 {
     text-align:center;
 		margin:0 0 .5em;
     font-weight:normal;
     color:$gray;
 	}
-  
+
   .editable-list {
   	margin:0;
   	padding:0;
   	list-style:none;
   	@extend .clearfix;
-	
+
   	li {
       background: fade-out($white, .25);
       border-bottom: 1px solid fade-out($black,.95);
@@ -40,14 +40,14 @@
       @extend .clearfix;
       @include transition(all .5s);
       position:relative;
-    
+
       h3 {
         float:left;
         font-size:1.75em;
         line-height: 1.1em;
         margin:0 .5em 0 0;
       }
-  
+
       .price-range {
         color:$grayD1;
         float:right;
@@ -55,7 +55,7 @@
         line-height: 1.1em;
         margin:5px 0 0 0;
       }
-      
+
       .checkbox-toggle {
         background:$grayL3;
         border:1px solid $grayL1;
@@ -64,7 +64,7 @@
         position:absolute;
         top: 1.5em;
         width: 1em;
-        
+
         &:after {
           @extend .ss-icon.ss-standard;
           @include transition(all .2s);
@@ -72,7 +72,7 @@
           content:"\2713";
           opacity:0;
         }
-        
+
         &.selected {
           &:after {
             opacity:1;
@@ -80,35 +80,36 @@
           }
         }
       }
-      
+
       &.bought {
         background:$grayL2;
         color:$grayD1;
       }
-      
+
       &.deleted {
         @include transition(opacity 1s);
         background:$redL3;
         color:$red;
         opacity:0;
-        
+
         .checkbox-toggle {
           background:$redL3;
           border-color: $redL1;
-          
+
           &:after {
             color:$redD1;
           }
         }
       }
-      
+
       &.empty-list {
         @include animation(slidedown 1.5s 1);
         background:$grayL2;
         overflow:hidden;
         padding: 0 1em;
         text-align:center;
-        
+        margin-top:.5em;
+
         .ss-icon {
           color:$gray;
           display: block;
@@ -116,23 +117,23 @@
           line-height: 1em;
           margin:1em 0 .25em;
         }
-        
+
         p {
           color:$grayD1;
           font-size:1.5em;
           line-height: 1.25em;
           margin: 0 auto 0;
           width: 80%;
-          
+
           &:last-child {
             margin-bottom: 1.5em;
           }
         }
       }
-      
+
       + li {
       }
-      
+
       &:last-child {
         border-bottom:0;
       }

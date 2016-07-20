@@ -11,7 +11,6 @@ body {
 	font-size:100%;
 	line-height:1em;
 	font-family: $bodyFont;
-	text-shadow: 0 -2px 0 fade-out($white, .25);
   max-width:750px;
   margin:0 auto;
 }
@@ -37,7 +36,7 @@ header {
 	width:49%;
 	margin-right:2%;
 	float:left;
-	
+
 	+ .half {
 		margin:0;
 	}
@@ -66,5 +65,5 @@ header {
 }
 
 .slidedown {
-  max-height:500px !important;  
+  max-height:500px !important;
 }

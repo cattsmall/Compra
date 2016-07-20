@@ -26,7 +26,7 @@
   				<form novalidate name="addForm">
   					<label>What do you want to buy?</label>
   					<input type="text" required placeholder="Enter the item's name" ng-model="newItem.name">
-					
+
   					<fieldset>
   						<legend>How much do you want to spend?</legend>
   						<div class="half minimum-price">
@@ -57,7 +57,7 @@
   				</form>
         </div>
 			</section>
-      
+
 			<aside class="items-total-cost">
 				<h4>Total amount you'll spend:</h4>
 				<p>
@@ -74,13 +74,13 @@
   					<p class="price-range">{{item.currencySign}}{{item.minPrice}} - {{item.currencySign}}{{item.maxPrice}}</p>
   				</li>
           <li class="empty-list" ng-if="boughtItems == 0 && wantedItems.length == 0">
-     				<i class="ss-icon ss-standard">&#x1F4A7;</i>
+     				<i class="ss-icon ss-standard">&#x26A0;</i>
             <p>Nothing is on your list yet.</p>
             <p>Click the button above to add your first item!</p>
           </li>
   			</ul>
       </section>
-      
+
 			<button class="btn btn-danger" ng-show="boughtItems > 0" ng-class="{hidden: wantedItems.length == 0}" ng-click="clearBoughtItems();">
 				<i class="ss-icon ss-standard">&#xE0D0;</i>
 				Remove purchased items
@@ -91,7 +91,7 @@
   function runads(){
     document.addEventListener("deviceready", onDeviceReady, false);
   }
- 
+
   function initAds() {
     if (AdMob) {
       var adPublisherIds = {
@@ -100,14 +100,14 @@
           interstitial : "ca-app-pub-2556143574102425/1808313196"
         }
       };
- 
+
       registerAdEvents();
- 
+
     } else {
       alert('AdMobAds plugin not ready');
     }
   }
- 
+
   function onAdLoaded(e) {
     if (e.adType === AdMob.AD_TYPE.INTERSTITIAL) {
       AdMob.showInterstitialAd();
@@ -116,14 +116,14 @@
       }, 2 * 60 * 1000); // 2 minutes
     }
   }
- 
+
   function onDeviceReady() {
     document.removeEventListener('deviceready', onDeviceReady, false);
     initAds();
- 
+
     // display a banner at startup
     AdMob.createBannerView();
- 
+
     // request an interstitial
     AdMob.requestInterstitialAd();
   }

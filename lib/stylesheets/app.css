@@ -603,7 +603,6 @@ body {
   font-size: 100%;
   line-height: 1em;
   font-family: "Titillium Web", sans-serif;
-  text-shadow: 0 -2px 0 rgba(255, 255, 255, 0.75);
   max-width: 750px;
   margin: 0 auto; }
 
@@ -747,8 +746,6 @@ select {
   border: 1px solid rgba(0, 0, 0, 0.25);
   color: #ffffff;
   background: #00c077;
-  box-shadow: inset 0 0 2px rgba(255, 255, 255, 0.5);
-  text-shadow: 0 -2px 0 rgba(0, 0, 0, 0.15);
   outline: none;
   transition: all .5s; }
   .btn .ss-icon {
@@ -756,21 +753,25 @@ select {
     opacity: .5; }
   .btn:hover {
     cursor: pointer;
-    background: #0DFFA4; }
+    background: #00f397; }
     .btn:hover .ss-icon {
       opacity: .75; }
   .btn:active {
-    background: #007348;
-    text-shadow: 0 -1px 0 rgba(0, 0, 0, 0.15);
-    box-shadow: inset 0 0 10px rgba(0, 0, 0, 0.25);
-    transition: all .1s; }
+    background: #00c077;
+    box-shadow: inset 0 3px 0 rgba(0, 0, 0, 0.25);
+    transition: all .1s;
+    padding-top: .6em;
+    padding-bottom: .4em; }
   .btn[disabled] {
     background: #cccccc;
     cursor: default;
-    text-shadow: 0 -1px 0 rgba(0, 0, 0, 0.15);
-    box-shadow: inset 0 0 10px rgba(0, 0, 0, 0.25); }
+    color: #666666; }
     .btn[disabled] .ss-icon {
       opacity: .5; }
+    .btn[disabled]:active {
+      box-shadow: none;
+      padding-top: .5em;
+      padding-bottom: .5em; }
   .btn.btn-primary {
     border-radius: 0; }
   .btn.btn-danger {
@@ -785,7 +786,6 @@ select {
     padding: 0;
     background: none;
     border: 0;
-    text-shadow: none;
     color: rgba(0, 0, 0, 0.25); }
     .btn.btn-plain .ss-icon {
       opacity: 1; }
@@ -794,8 +794,7 @@ select {
       background: none; }
     .btn.btn-plain:active {
       background: none;
-      box-shadow: none;
-      text-shadow: inset 0 0 10px rgba(0, 0, 0, 0.25); }
+      box-shadow: none; }
 
 .app-intro {
   position: absolute;
@@ -819,10 +818,10 @@ select {
     display: table-cell; }
   .app-intro h1 {
     font-size: 8em;
-    color: #004028; }
+    color: #007348; }
   .app-intro h2 {
     font-weight: 200;
-    color: #00c077; }
+    color: #00f397; }
 
 .items-total-cost {
   padding: 1em;
@@ -889,7 +888,7 @@ select {
           opacity: 0; }
         .editable-list-area .editable-list li .checkbox-toggle.selected:after {
           opacity: 1;
-          color: #007348; }
+          color: #00c077; }
       .editable-list-area .editable-list li.bought {
         background: #ebebeb;
         color: #999999; }
@@ -913,7 +912,8 @@ select {
         background: #ebebeb;
         overflow: hidden;
         padding: 0 1em;
-        text-align: center; }
+        text-align: center;
+        margin-top: .5em; }
         .editable-list-area .editable-list li.empty-list .ss-icon {
           color: #cccccc;
           display: block;
